@@ -1,0 +1,17 @@
+# Apache Configuration for Extensionless URLs
+# Optimized for Bluehost
+
+RewriteEngine On
+
+# 1. Redirect index.html to the root /
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2. Redirect /any-page.html to /any-page (Permanent Redirect)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Internally rewrite requests without extension to .html files
+# If requesting /about, serve /about.html internally
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]

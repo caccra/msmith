@@ -730,8 +730,9 @@ svg {
   color: var(--text-muted);
 }
 
-.footer-links a:hover {
-  color: var(--accent-base);
+.footer-links a:hover,
+.footer-contact-link:hover {
+  color: var(--accent-base) !important;
 }
 
 .footer-bottom {
