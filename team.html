@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the experienced legal team at M-Smith Advocates.">
+    <title>Our Team | M-Smith Advocates</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .team-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: var(--bg-surface-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-base);
+        }
+
+        .team-info {
+            padding: var(--space-4);
+        }
+
+        .team-name {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-1);
+        }
+
+        .team-role {
+            color: var(--accent-base);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-2);
+        }
+
+        .team-bio {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="logo.png" alt="M-Smith Advocates Logo" style="max-height: 50px;">
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav id="primary-navigation" class="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="practice-areas.html" class="nav-link">Expertise</a></li>
+                    <li><a href="team.html" class="nav-link active">The Team</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header section-padding">
+            <div class="container animate-on-scroll">
+                <h1 class="section-title">Our Legal Experts</h1>
+                <p class="section-description">Meet the brilliant minds behind M-Smith Advocates.</p>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section class="team-section section-padding">
+            <div class="container">
+                <div class="team-grid">
+                    <!-- Principal Partner -->
+                    <article class="team-card animate-on-scroll">
+                        <div class="team-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Masari Aim Smith</h3>
+                            <p class="team-role">Principal Partner</p>
+                            <p class="team-bio">
+                                <strong>Qualifications:</strong> (LLB MUK), Dip. LDC
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Advocate 1 -->
+                    <article class="team-card animate-on-scroll delay-1">
+                        <div class="team-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Namulindwa Rose</h3>
+                            <p class="team-role">Advocate</p>
+                            <p class="team-bio">
+                                <strong>Qualifications:</strong> LLB (MUK), Dip, LDC
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Advocate 2 -->
+                    <article class="team-card animate-on-scroll delay-2">
+                        <div class="team-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Makhoka John</h3>
+                            <p class="team-role">Advocate</p>
+                            <p class="team-bio">
+                                <strong>Qualifications:</strong> LLB (MUK), Dip, LDC
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Legal Assistant -->
+                    <article class="team-card animate-on-scroll delay-3">
+                        <div class="team-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Nalumansi Sylvia</h3>
+                            <p class="team-role">Legal Assistant</p>
+                            <p class="team-bio">
+                                <strong>Qualifications:</strong> LLB (MUK), Dip, LDC
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Consultant -->
+                    <article class="team-card animate-on-scroll delay-4">
+                        <div class="team-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Maweu Christopher Kituu</h3>
+                            <p class="team-role">Consultant</p>
+                            <p class="team-bio">
+                                <strong>Qualifications:</strong> (MPPM, BASS), Dip, LDC
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo">
+                    <img src="logo.png" alt="M-Smith Advocates Logo" style="max-height: 60px;">
+                </a>
+                <p class="footer-tagline">Pursuing justice with integrity and excellence since 2013.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="practice-areas.html">Expertise</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> M-Smith Advocates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
