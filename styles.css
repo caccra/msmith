@@ -719,6 +719,7 @@ svg {
 .footer-heading {
   font-size: 1.125rem;
   margin-bottom: var(--space-3);
+  color: #800000;
 }
 
 .footer-links {
