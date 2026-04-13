@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Manrope:wght@400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -36,10 +36,34 @@
             <nav id="primary-navigation" class="primary-navigation">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Home</a></li>
-                    <li><a href="about" class="nav-link">About</a></li>
-                    <li><a href="practice-areas" class="nav-link active">Expertise</a></li>
-                    <li><a href="team" class="nav-link">The Team</a></li>
-                    <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item-dropdown">
+                    <a href="practice-areas.html" class="nav-link active dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Expertise
+                        <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="practice-areas.html" class="dropdown-all-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            All Practice Areas
+                        </a>
+                        <div class="dropdown-grid">
+                            <a href="litigation-arbitration.html" class="dropdown-item ">Litigation &amp; Arbitration</a>
+                            <a href="real-estate.html" class="dropdown-item ">Real Estate &amp; Land</a>
+                            <a href="intellectual-property.html" class="dropdown-item ">Intellectual Property</a>
+                            <a href="oil-gas-petroleum.html" class="dropdown-item ">Oil, Gas &amp; Petroleum</a>
+                            <a href="mining-minerals.html" class="dropdown-item ">Mining &amp; Minerals</a>
+                            <a href="employment-labour.html" class="dropdown-item ">Employment &amp; Labour</a>
+                            <a href="corporate-commercial.html" class="dropdown-item ">Corporate &amp; Commercial</a>
+                            <a href="immigration.html" class="dropdown-item ">Immigration Law</a>
+                            <a href="insurance.html" class="dropdown-item ">Insurance Law</a>
+                            <a href="human-rights.html" class="dropdown-item ">Human Rights</a>
+                            <a href="eac-law.html" class="dropdown-item ">EAC Law</a>
+                        </div>
+                    </div>
+                </li>
+                    <li><a href="team.html" class="nav-link">The Team</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
 
             </nav>
@@ -55,122 +79,154 @@
             </div>
         </section>
 
-        <!-- Detailed Expertise -->
+        <!-- Practice Area Cards -->
         <section class="expertise-details section-padding">
             <div class="container">
-                <div class="expertise-list">
-                    <!-- 1. Litigation & Arbitration -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Litigation & Arbitration</h3>
-                            <p>We provide full-service representation in court disputes and independent arbitration
-                                processes. Our approach is characterized by aggressive advocacy and strategic planning,
-                                ensuring that our clients' interests are staunchly protected through every stage of the
-                                legal process.</p>
-                            <p>Our team handles commercial disputes, contractual disagreements, and complex civil
-                                litigation within the regional courts of East Africa.</p>
-                        </div>
-                    </article>
+                <div class="practice-cards-grid">
 
-                    <!-- 2. Real Estate & Land Transactions -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Real Estate & Land Transactions</h3>
-                            <p>Navigating the property market in East Africa requires local knowledge and meticulous due
-                                diligence. We provide expert guidance through the complexities of buying and selling
-                                land, specifically focused on eliminating fraud and streamlining the acquisition
-                                process.</p>
-                            <p>Our services include title verification, drafting sale agreements, facilitating
-                                transfers, and resolving property-related disputes.</p>
+                    <!-- 1. Litigation & Arbitration -->
+                    <a href="litigation-arbitration.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates%20Litigation.png" alt="Litigation and Arbitration" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">01 — Expertise</div>
+                            <h3>Litigation &amp; Arbitration</h3>
+                            <p>Full-service representation in court disputes and independent arbitration processes, characterized by aggressive advocacy and strategic planning across East Africa.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 2. Real Estate & Land -->
+                    <a href="real-estate.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/oleksandrpidvalnyi-real-estate-6688945.jpg" alt="Real Estate and Land" class="practice-card-img">
+                        </div>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">02 — Expertise</div>
+                            <h3>Real Estate &amp; Land</h3>
+                            <p>Expert guidance through property acquisition, title verification, sale agreements, and dispute resolution — eliminating fraud and streamlining transactions.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
                     <!-- 3. Intellectual Property -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
+                    <a href="intellectual-property.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/M-Smithadvocates-Intellectual-property.jpg" alt="Intellectual Property" class="practice-card-img">
+                        </div>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">03 — Expertise</div>
                             <h3>Intellectual Property</h3>
-                            <p>Your ideas are your most valuable assets. We provide comprehensive legal support for
-                                Patents, Trade Marks, and Copyrights. This includes registration, protection strategy,
-                                and litigation within the East African region.</p>
-                            <p>We help businesses secure their brands and innovations against infringement, ensuring
-                                regional compliance and robust enforcement.</p>
+                            <p>Comprehensive support for Patents, Trade Marks, and Copyrights — registration, protection strategy, and enforcement across the East African region.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- 4. Oil, Gas & Petroleum Law -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Oil, Gas & Petroleum Law</h3>
-                            <p>As the energy sector evolves, we offer specialized consultancy on Exploration,
-                                Development, and Production regulations. We help clients navigate national content
-                                requirements, sector participation, and complex licensing frameworks.</p>
+                    <!-- 4. Oil, Gas & Petroleum -->
+                    <a href="oil-gas-petroleum.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates_Insurance%20law%20(10).jpg" alt="Oil Gas and Petroleum Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">04 — Expertise</div>
+                            <h3>Oil, Gas &amp; Petroleum</h3>
+                            <p>Specialized consultancy on Exploration, Development, and Production regulations, national content requirements, and complex licensing frameworks.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
-                    <!-- 5. Mining & Mineral Resources -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Mining & Mineral Resources</h3>
-                            <p>Handling transactions and legal frameworks related to mineral resource exploration. We
-                                advise on mining leases, environmental compliance, and community agreements within the
-                                extractives industry.</p>
+                    <!-- 5. Mining & Minerals -->
+                    <a href="mining-minerals.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates_Mining%20Law.jpeg" alt="Mining and Minerals" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">05 — Expertise</div>
+                            <h3>Mining &amp; Minerals</h3>
+                            <p>Legal frameworks for mineral resource exploration including mining leases, environmental compliance, and community agreements within the extractives industry.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
                     <!-- 6. Employment & Labour -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Employment & Labour</h3>
-                            <p>Providing legal counsel on workplace relations, drafting robust employment contracts, and
-                                representing clients in labour-related disputes and industrial relations matters.</p>
+                    <a href="employment-labour.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/activedia-law-1063249.jpg" alt="Employment and Labour Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">06 — Expertise</div>
+                            <h3>Employment &amp; Labour</h3>
+                            <p>Workplace relations counsel, employment contract drafting, and representation in labour disputes and industrial relations matters.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
-                    <!-- 7. Corporate & Commercial Services -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Corporate & Commercial Services</h3>
-                            <p>Our corporate desk provides Company Secretarial services, debt collections, and property
-                                management. we act as general legal advisors for businesses, ensuring corporate
-                                governance and operational compliance.</p>
+                    <!-- 7. Corporate & Commercial -->
+                    <a href="corporate-commercial.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates_commercial%20and%20corporate%20law.png" alt="Corporate and Commercial Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">07 — Expertise</div>
+                            <h3>Corporate &amp; Commercial</h3>
+                            <p>Company secretarial services, debt collections, property management, and general corporate advisory ensuring governance and operational compliance.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
                     <!-- 8. Immigration Law -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Immigration Law</h3>
-                            <p>Assisting with residency, visas, work permits, and other immigration-related regulatory
-                                matters for expatriates and businesses operating in the region.</p>
+                    <a href="immigration.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates_Immigration%20Law.jpg" alt="Immigration Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">08 — Expertise</div>
+                            <h3>Immigration Law</h3>
+                            <p>Residency, visas, work permits, and immigration-related regulatory matters for expatriates and businesses operating across the region.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
                     <!-- 9. Insurance Law -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>Insurance Law</h3>
-                            <p>Legal services centered on insurance policy interpretation, complex claims resolution,
-                                and providing advisory for both insurers and the insured.</p>
+                    <a href="insurance.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/m-smithadvocates_Insurance%20law%20(1).jpg" alt="Insurance Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">09 — Expertise</div>
+                            <h3>Insurance Law</h3>
+                            <p>Policy interpretation, complex claims resolution, and advisory for both insurers and the insured across Uganda and the wider East African market.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
 
                     <!-- 10. Human Rights -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
+                    <a href="human-rights.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/cqf-avocat-justice-2755765.jpg" alt="Human Rights Law" class="practice-card-img">
+                        </div>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">10 — Expertise</div>
                             <h3>Human Rights</h3>
-                            <p>Advocacy and legal support for human rights-related issues, ensuring constitutional
-                                protections and international standards are upheld for our clients.</p>
+                            <p>Advocacy and legal support for human rights issues, ensuring constitutional protections and international standards are upheld for every client.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- 11. East African Community (EAC) Law -->
-                    <article class="expertise-detail-item animate-on-scroll">
-                        <div class="expertise-detail-content">
-                            <h3>East African Community (EAC) Law</h3>
-                            <p>Niche expertise in the regional legal frameworks, cross-border trade legalities, and the
-                                evolving protocols within the East African Community (EAC).</p>
+                    <!-- 11. EAC Law -->
+                    <a href="eac-law.html" class="practice-card animate-on-scroll">
+                        <div class="practice-card-img-wrap">
+                            <img src="images/M-smithadvocates-EAC-.png" alt="EAC Law" class="practice-card-img">
                         </div>
-                    </article>
+                        <div class="practice-card-body">
+                            <div class="practice-card-num">11 — Expertise</div>
+                            <h3>EAC Law</h3>
+                            <p>Niche expertise in regional legal frameworks, cross-border trade legalities, and evolving protocols within the East African Community.</p>
+                            <span class="practice-card-cta">View Details <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -216,10 +272,10 @@
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="practice-areas">Expertise</a></li>
-                    <li><a href="team">Our Team</a></li>
-                    <li><a href="contact">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="practice-areas.html">Expertise</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 

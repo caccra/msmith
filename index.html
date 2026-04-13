@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Manrope:wght@400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -39,10 +39,34 @@
             <nav id="primary-navigation" class="primary-navigation">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link active">Home</a></li>
-                    <li><a href="about" class="nav-link">About</a></li>
-                    <li><a href="practice-areas" class="nav-link">Expertise</a></li>
-                    <li><a href="team" class="nav-link">The Team</a></li>
-                    <li><a href="contact" class="nav-link">Contact</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item-dropdown">
+                    <a href="practice-areas.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Expertise
+                        <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="practice-areas.html" class="dropdown-all-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            All Practice Areas
+                        </a>
+                        <div class="dropdown-grid">
+                            <a href="litigation-arbitration.html" class="dropdown-item ">Litigation &amp; Arbitration</a>
+                            <a href="real-estate.html" class="dropdown-item ">Real Estate &amp; Land</a>
+                            <a href="intellectual-property.html" class="dropdown-item ">Intellectual Property</a>
+                            <a href="oil-gas-petroleum.html" class="dropdown-item ">Oil, Gas &amp; Petroleum</a>
+                            <a href="mining-minerals.html" class="dropdown-item ">Mining &amp; Minerals</a>
+                            <a href="employment-labour.html" class="dropdown-item ">Employment &amp; Labour</a>
+                            <a href="corporate-commercial.html" class="dropdown-item ">Corporate &amp; Commercial</a>
+                            <a href="immigration.html" class="dropdown-item ">Immigration Law</a>
+                            <a href="insurance.html" class="dropdown-item ">Insurance Law</a>
+                            <a href="human-rights.html" class="dropdown-item ">Human Rights</a>
+                            <a href="eac-law.html" class="dropdown-item ">EAC Law</a>
+                        </div>
+                    </div>
+                </li>
+                    <li><a href="team.html" class="nav-link">The Team</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
 
             </nav>
@@ -56,12 +80,41 @@
             <div class="hero-background"></div>
             <div class="container hero-container animate-on-scroll">
                 <div class="hero-content">
+                    <span class="hero-eyebrow">M-Smith Advocates &mdash; Est. 2013</span>
                     <h1 class="hero-title">Advocacy. <span class="highlight">Integrity.</span> Results.</h1>
                     <p class="hero-subtitle">M-Smith Advocates provides unparalleled legal representation with a
                         commitment to protecting your rights and securing your future.</p>
                     <div class="hero-actions">
-                        <a href="contact" class="btn btn-primary">Schedule a Consultation</a>
-                        <a href="about" class="btn btn-outline">Our Philosophy</a>
+                        <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                        <a href="about.html" class="btn btn-outline">Our Philosophy</a>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="scroll-indicator-line"></div>
+                        <span>Scroll</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="trust-bar">
+            <div class="container">
+                <div class="trust-bar-inner">
+                    <div class="trust-item">
+                        <span class="trust-number">10+</span>
+                        <span class="trust-label">Years of Excellence</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">11</span>
+                        <span class="trust-label">Practice Areas</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">5</span>
+                        <span class="trust-label">Expert Advocates</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">EAC</span>
+                        <span class="trust-label">Regional Coverage</span>
                     </div>
                 </div>
             </div>
@@ -71,6 +124,7 @@
         <section id="expertise" class="expertise-section section-padding">
             <div class="container">
                 <header class="section-header animate-on-scroll">
+                    <span class="section-eyebrow">What We Do</span>
                     <h2 class="section-title">Areas of Expertise</h2>
                     <p class="section-description">Comprehensive legal solutions tailored to meet the dynamic needs of
                         our diverse clientele.</p>
@@ -78,166 +132,124 @@
 
                 <div class="expertise-grid">
                     <article class="expertise-card animate-on-scroll delay-1">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 22v-6m-4 6v-4m8 4v-8M4 22V10m16 12V6"></path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates%20Litigation.png" alt="Litigation and Arbitration" class="card-img">
                         </div>
-                        <h3 class="card-title">Litigation & Arbitration</h3>
-                        <p class="card-text">Full-service representation in court disputes and specialized independent
-                            arbitration processes across the region.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Litigation &amp; Arbitration</h3>
+                            <p class="card-text">Full-service representation in court disputes and specialized independent arbitration processes across the region.</p>
+                            <a href="litigation-arbitration.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll delay-2">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/oleksandrpidvalnyi-real-estate-6688945.jpg" alt="Real Estate and Land" class="card-img">
                         </div>
-                        <h3 class="card-title">Real Estate & Land Transactions</h3>
-                        <p class="card-text">Expert guidance through land transactions, focused on eliminating fraud
-                            risks and streamlining the acquisition process.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Real Estate &amp; Land Transactions</h3>
+                            <p class="card-text">Expert guidance through land transactions, focused on eliminating fraud risks and streamlining the acquisition process.</p>
+                            <a href="real-estate.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll delay-3">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/M-Smithadvocates-Intellectual-property.jpg" alt="Intellectual Property" class="card-img">
                         </div>
-                        <h3 class="card-title">Intellectual Property</h3>
-                        <p class="card-text">Comprehensive support for Patents, Trade Marks, and Copyrights, including
-                            regional registration and protection across East Africa.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Intellectual Property</h3>
+                            <p class="card-text">Comprehensive support for Patents, Trade Marks, and Copyrights, including regional registration and protection across East Africa.</p>
+                            <a href="intellectual-property.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll delay-4">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 2v10l4.5 4.5l-3 3l-6-6l3-3l1.5 1.5"></path>
-                                <circle cx="12" cy="12" r="10"></circle>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates_Insurance%20law%20(10).jpg" alt="Oil Gas and Petroleum" class="card-img">
                         </div>
-                        <h3 class="card-title">Oil, Gas & Petroleum Law</h3>
-                        <p class="card-text">Specialized consultancy on exploration and production regulations,
-                            including national content requirements and sector participation.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Oil, Gas &amp; Petroleum Law</h3>
+                            <p class="card-text">Specialized consultancy on exploration and production regulations, including national content requirements and sector participation.</p>
+                            <a href="oil-gas-petroleum.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates_Mining%20Law.jpeg" alt="Mining and Minerals" class="card-img">
                         </div>
-                        <h3 class="card-title">Mining & Mineral Resources</h3>
-                        <p class="card-text">Navigating legal frameworks and complex transactions related to the
-                            exploration and exploitation of mineral resources.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Mining &amp; Mineral Resources</h3>
+                            <p class="card-text">Navigating legal frameworks and complex transactions related to the exploration and exploitation of mineral resources.</p>
+                            <a href="mining-minerals.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/activedia-law-1063249.jpg" alt="Employment and Labour" class="card-img">
                         </div>
-                        <h3 class="card-title">Employment & Labour</h3>
-                        <p class="card-text">Expert counsel on workplace relations, contract negotiations, and the
-                            resolution of complex labour disputes.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Employment &amp; Labour</h3>
+                            <p class="card-text">Expert counsel on workplace relations, contract negotiations, and the resolution of complex labour disputes.</p>
+                            <a href="employment-labour.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="3" y1="9" x2="21" y2="9"></line>
-                                <line x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates_commercial%20and%20corporate%20law.png" alt="Corporate and Commercial" class="card-img">
                         </div>
-                        <h3 class="card-title">Corporate & Commercial</h3>
-                        <p class="card-text">Comprehensive services including Company Secretarial, legal advisory, debt
-                            collections, and property management.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Corporate &amp; Commercial</h3>
+                            <p class="card-text">Comprehensive services including Company Secretarial, legal advisory, debt collections, and property management.</p>
+                            <a href="corporate-commercial.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates_Immigration%20Law.jpg" alt="Immigration Law" class="card-img">
                         </div>
-                        <h3 class="card-title">Immigration Law</h3>
-                        <p class="card-text">Legal assistance for residency, visas, work permits, and various other
-                            immigration-related regulatory matters.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Immigration Law</h3>
+                            <p class="card-text">Legal assistance for residency, visas, work permits, and various other immigration-related regulatory matters.</p>
+                            <a href="immigration.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/m-smithadvocates_Insurance%20law%20(1).jpg" alt="Insurance Law" class="card-img">
                         </div>
-                        <h3 class="card-title">Insurance Law</h3>
-                        <p class="card-text">Specialized legal services centered on insurance policy interpretation,
-                            complex claims, and risk management.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Insurance Law</h3>
+                            <p class="card-text">Specialized legal services centered on insurance policy interpretation, complex claims, and risk management.</p>
+                            <a href="insurance.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/cqf-avocat-justice-2755765.jpg" alt="Human Rights" class="card-img">
                         </div>
-                        <h3 class="card-title">Human Rights</h3>
-                        <p class="card-text">Unwavering advocacy and legal support for human rights issues, upholding
-                            justice and dignity for all.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">Human Rights</h3>
+                            <p class="card-text">Unwavering advocacy and legal support for human rights issues, upholding justice and dignity for all.</p>
+                            <a href="human-rights.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
 
                     <article class="expertise-card animate-on-scroll">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
+                        <div class="card-img-wrap">
+                            <img src="images/M-smithadvocates-EAC-.png" alt="EAC Law" class="card-img">
                         </div>
-                        <h3 class="card-title">EAC Law</h3>
-                        <p class="card-text">Niche expertise in regional legal frameworks and cross-border legalities
-                            within the East African Community.</p>
+                        <div class="card-body">
+                            <h3 class="card-title">EAC Law</h3>
+                            <p class="card-text">Niche expertise in regional legal frameworks and cross-border legalities within the East African Community.</p>
+                            <a href="eac-law.html" class="learn-more-link" style="margin-top: var(--space-3);">View Details <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -247,6 +259,7 @@
         <section id="about" class="about-section section-padding">
             <div class="container about-container">
                 <div class="about-content animate-on-scroll">
+                    <span class="section-eyebrow">Who We Are</span>
                     <h2 class="section-title">Established Since 2013</h2>
                     <p class="about-text">M-Smith Advocates is a premier corporate firm of choice dedicated to
                         delivering high-quality and affordable legal
@@ -277,10 +290,57 @@
             </div>
         </section>
 
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container">
+                <div class="cta-banner-inner">
+                    <div class="cta-banner-content animate-on-scroll">
+                        <span class="section-eyebrow">Why M-Smith</span>
+                        <h2 class="cta-banner-title">Your Legal Matters Deserve Expert Attention</h2>
+                        <p class="cta-banner-text">With over a decade of practice across East Africa, we bring unmatched expertise, unwavering commitment, and a client-first approach to every case we handle.</p>
+                        <div class="cta-banner-actions">
+                            <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+                            <a href="practice-areas.html" class="btn btn-outline">View Our Expertise</a>
+                        </div>
+                    </div>
+                    <div class="cta-features animate-on-scroll delay-2">
+                        <div class="cta-feature-item">
+                            <div class="cta-feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div class="cta-feature-text">
+                                <strong>Proven Track Record</strong>
+                                <span>Consistently securing favorable outcomes for clients across the region.</span>
+                            </div>
+                        </div>
+                        <div class="cta-feature-item">
+                            <div class="cta-feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            </div>
+                            <div class="cta-feature-text">
+                                <strong>Regional Expertise</strong>
+                                <span>Deep knowledge of EAC law and cross-border legal frameworks.</span>
+                            </div>
+                        </div>
+                        <div class="cta-feature-item">
+                            <div class="cta-feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div class="cta-feature-text">
+                                <strong>Client-First Approach</strong>
+                                <span>Personalized legal strategies tailored to your specific needs.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact-section section-padding">
             <div class="container">
                 <header class="section-header center animate-on-scroll">
+                    <span class="section-eyebrow">Get in Touch</span>
                     <h2 class="section-title">Request a Consultation</h2>
                     <p class="section-description">Speak with our leading attorneys today to secure your tomorrow.</p>
                 </header>
@@ -413,10 +473,10 @@
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="practice-areas">Expertise</a></li>
-                    <li><a href="team">Our Team</a></li>
-                    <li><a href="contact">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="practice-areas.html">Expertise</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
