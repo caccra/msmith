@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /privacy-policy
+Disallow: /terms
+Disallow: /disclaimer
+Disallow: /claude-seo/
+
+User-agent: Google-Extended
+Allow: /
+
+# llms.txt: https://www.m-smithadvocates.com/llms.txt
+Sitemap: https://www.m-smithadvocates.com/sitemap.xml

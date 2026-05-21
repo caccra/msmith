@@ -94,36 +94,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. Scroll Animations (Intersection Observer)
-    // Only apply if user hasn't requested reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animationElements = document.querySelectorAll('.animate-on-scroll');
 
     if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-        const animationElements = document.querySelectorAll('.animate-on-scroll');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Stop observing once animated
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.05 });
 
-        animationElements.forEach(el => observer.observe(el));
+        animationElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            // Immediately reveal elements already in the viewport — don't wait for async IO callback
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('is-visible');
+            } else {
+                observer.observe(el);
+            }
+        });
     } else {
-        // Fallback or if reduced motion is preferred, show all immediately
-        const animationElements = document.querySelectorAll('.animate-on-scroll');
         animationElements.forEach(el => {
             el.classList.add('is-visible');
             el.style.opacity = '1';
             el.style.transform = 'none';
         });
     }
+
+    // 6. Contact Form Submission
+    const contactForm = document.getElementById('contact-form-dedicated');
+    if (contactForm) {
+        const submitBtn = contactForm.querySelector('.submit-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const existingMsg = contactForm.querySelector('.form-status');
+            if (existingMsg) existingMsg.remove();
+
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
+            submitBtn.disabled = true;
+
+            try {
+                const res = await fetch('contact.php', {
+                    method: 'POST',
+                    body: new FormData(contactForm)
+                });
+                const data = await res.json();
+
+                const msg = document.createElement('p');
+                msg.className = 'form-status';
+
+                if (data.success) {
+                    msg.style.cssText = 'padding:12px 16px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;color:#166534;font-size:0.9rem;margin-top:12px;';
+                    msg.textContent = 'Message sent — we will respond within 24 hours.';
+                    contactForm.reset();
+                } else {
+                    msg.style.cssText = 'padding:12px 16px;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;color:#991b1b;font-size:0.9rem;margin-top:12px;';
+                    msg.textContent = data.error || 'Something went wrong. Please try again or email us directly.';
+                }
+
+                submitBtn.insertAdjacentElement('afterend', msg);
+            } catch (_) {
+                const msg = document.createElement('p');
+                msg.className = 'form-status';
+                msg.style.cssText = 'padding:12px 16px;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;color:#991b1b;font-size:0.9rem;margin-top:12px;';
+                msg.textContent = 'Network error. Please email us directly at info@m-smithadvocates.com.';
+                submitBtn.insertAdjacentElement('afterend', msg);
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // 7. Floating WhatsApp Button (injected globally)
+    const waBtn = document.createElement('a');
+    waBtn.href = 'https://wa.me/256782776074';
+    waBtn.className = 'whatsapp-float';
+    waBtn.target = '_blank';
+    waBtn.rel = 'noopener noreferrer';
+    waBtn.setAttribute('aria-label', 'Chat with us on WhatsApp');
+    waBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>';
+    document.body.appendChild(waBtn);
 });

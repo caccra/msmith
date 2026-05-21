@@ -1,7 +1,24 @@
-# Apache Configuration for Extensionless URLs
+# Apache Configuration for M-Smith Advocates
 # Optimized for Bluehost
 
 RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Block direct access to the claude-seo directory
+RewriteRule ^claude-seo(/|$) - [F,L]
 
 # 1. Redirect index.html to the root /
 RewriteRule ^index\.html$ / [R=301,L]
