@@ -3582,3 +3582,75 @@ svg {
   line-height: 1.75;
   margin: 0;
 }
+
+/* ================================================
+   SMALL DEVICE FIXES (320px – 375px)
+================================================ */
+@media (max-width: 375px) {
+  :root {
+    --space-section: 48px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 7vw, 1.8rem);
+  }
+
+  .nav-logo-text {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .expertise-card {
+    padding: var(--space-4);
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-links-group {
+    text-align: left;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .brand-logo img {
+    height: 36px;
+  }
+
+  .mobile-menu-toggle {
+    padding: 6px;
+  }
+}
