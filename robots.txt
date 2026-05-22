@@ -1,11 +1,25 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy
 Disallow: /terms
 Disallow: /disclaimer
 Disallow: /claude-seo/
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 # llms.txt: https://www.m-smithadvocates.com/llms.txt
