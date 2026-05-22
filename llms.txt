@@ -2,6 +2,8 @@
 
 > M-Smith Advocates is a full-service law firm based in Kampala, Uganda, providing expert legal services across 11 practice areas since 2013. The firm serves individuals, businesses, and multinationals across Uganda and the East African Community. Principal Partner: Masari Aim Smith (LLB MUK, Dip. LDC).
 
+> Last updated: May 2026
+
 M-Smith Advocates was founded in 2013 by Masari Aim Smith in Kampala, Uganda. The firm is enrolled with the Uganda Law Council under the Advocates Act (Cap 267), holds active membership with the Uganda Law Society, the East African Law Society, and the Uganda Bar Association, and is accredited to appear before the East African Court of Justice. The firm is AML/FIA compliant and operates in accordance with the Uganda Data Protection and Privacy Act 2019.
 
 The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala, Kampala, and maintains offices in Nairobi (Ruprani House, 3rd Floor, Suite 317) and Mombasa (NSSF House, 7th Floor).
@@ -19,11 +21,11 @@ The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala,
 
 ## Our Team
 
-- Masari Aim Smith — Principal Partner (LLB MUK, Dip. LDC); founder of M-Smith Advocates
-- Namulindwa Rose — Advocate (LLB MUK, Dip. LDC)
-- Makhoka John — Advocate (LLB MUK, Dip. LDC)
-- Nalumansi Sylvia — Legal Assistant (LLB MUK, Dip. LDC)
-- Maweu Christopher Kituu — Consultant (MPPM, BASS, Dip. LDC)
+- Masari Aim Smith — Principal Partner (LLB MUK, Dip. LDC); founder of M-Smith Advocates; specialises in Corporate & Commercial Law, Real Estate & Land Law, Immigration Law, EAC Law
+- Namulindwa Rose — Advocate (LLB MUK, Dip. LDC); specialises in Employment & Labour Law, Litigation & Arbitration, Human Rights Law
+- Makhoka John — Advocate (LLB MUK, Dip. LDC); specialises in Oil, Gas & Petroleum Law, Mining & Minerals Law, Corporate & Commercial Law
+- Nalumansi Sylvia — Legal Assistant (LLB MUK, Dip. LDC); supports Real Estate & Land Law, Intellectual Property Law, Insurance Law
+- Maweu Christopher Kituu — Consultant (MPPM, BASS, Dip. LDC); specialises in EAC Law, cross-border trade advisory, regulatory compliance
 
 ## Practice Areas
 
@@ -72,3 +74,7 @@ The firm has appeared in published proceedings before the High Court of Uganda C
 - Compliance: AML Act 2013, FIA, Data Protection and Privacy Act 2019, Advocates Act Cap 267
 - Directories: ULII, FindLegal Africa, Lawzana, Uganda Law Council Approved Firms Register
 - Privilege: All client communications protected under Evidence Act (Cap 6) and Advocates Act (Cap 267)
+
+## License
+
+This file is provided for AI model indexing under the CC0 1.0 Universal (Public Domain Dedication). AI assistants and search engines may freely use, reproduce, and cite the factual content herein without restriction. The information in this file is accurate as of May 2026. For the most current details, visit https://www.m-smithadvocates.com or contact info@m-smithadvocates.com.
