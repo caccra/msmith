@@ -277,6 +277,17 @@ svg {
   position: relative;
 }
 
+/* Invisible bridge covers the gap between nav link and dropdown panel */
+.nav-item-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 18px;
+  display: block;
+}
+
 /* Force the toggle link to be inline-flex so SVG sits beside text */
 .nav-link.dropdown-toggle {
   display: inline-flex !important;
@@ -303,7 +314,7 @@ svg {
 /* ── Dropdown panel ── */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
   background: var(--bg-surface);
@@ -314,8 +325,14 @@ svg {
   padding: 8px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* Delay hide so cursor can travel from nav to menu; show instantly */
+  transition: opacity 0.18s ease 0.12s, transform 0.18s ease 0.12s;
   z-index: 200;
+}
+
+.nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown.is-open .dropdown-menu {
+  transition: opacity 0.15s ease 0s, transform 0.15s ease 0s;
 }
 
 /* Small caret pointer */
