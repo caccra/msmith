@@ -3568,12 +3568,13 @@ svg {
   margin-bottom: 0;
 }
 
-.faq-q {
+h3.faq-q, .faq-q {
   font-family: 'Manrope', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 0 0 var(--space-2);
+  line-height: 1.5;
 }
 
 .faq-a {

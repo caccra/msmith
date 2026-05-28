@@ -6,6 +6,9 @@ Disallow: /claude-seo/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /terms
+Disallow: /disclaimer
+Disallow: /claude-seo/
 
 User-agent: GPTBot
 Allow: /
