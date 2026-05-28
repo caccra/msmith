@@ -356,9 +356,16 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Hero Section with image slider -->
         <section id="home" class="hero-section">
-            <div class="hero-background"></div>
+            <!-- Slider backgrounds -->
+            <div class="hero-slides" aria-hidden="true">
+                <div class="hero-slide active" style="background-image:url('hero-bg.webp')"></div>
+                <div class="hero-slide" style="background-image:url('images/hamzaandhamza-law-8505627.webp')"></div>
+                <div class="hero-slide" style="background-image:url('images/Court-gavel-Law.webp')"></div>
+            </div>
+            <div class="hero-overlay"></div>
+
             <div class="container hero-container animate-on-scroll">
                 <div class="hero-content">
                     <span class="hero-eyebrow">Advocacy. Integrity. Results. &mdash; Est. 2013, Kampala</span>
@@ -380,6 +387,12 @@
                         <span class="hero-ticker-item">Uganda &amp; EAC</span>
                         <span class="hero-ticker-sep">|</span>
                         <span class="hero-ticker-item">Est. 2013, Kampala</span>
+                    </div>
+                    <!-- Slider dots -->
+                    <div class="hero-dots" role="tablist" aria-label="Hero image slides">
+                        <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
                     </div>
                     <div class="scroll-indicator">
                         <div class="scroll-indicator-line"></div>

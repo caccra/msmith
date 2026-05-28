@@ -172,7 +172,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Floating WhatsApp Button (injected globally)
+    // 7. Hero Image Slider
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots   = document.querySelectorAll('.hero-dot');
+
+    if (heroSlides.length > 1) {
+        let current = 0;
+        const INTERVAL = 5000;
+
+        function goTo(index) {
+            heroSlides[current].classList.remove('active');
+            heroDots[current]?.classList.remove('active');
+            current = (index + heroSlides.length) % heroSlides.length;
+            heroSlides[current].classList.add('active');
+            heroDots[current]?.classList.add('active');
+            heroDots[current]?.setAttribute('aria-selected', 'true');
+        }
+
+        heroDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { goTo(i); clearInterval(timer); timer = setInterval(() => goTo(current + 1), INTERVAL); });
+        });
+
+        let timer = setInterval(() => goTo(current + 1), INTERVAL);
+
+        // Pause on hover
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', () => clearInterval(timer));
+            heroSection.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), INTERVAL); });
+        }
+    }
+
+    // 8. Floating WhatsApp Button (injected globally)
     const waBtn = document.createElement('a');
     waBtn.href = 'https://wa.me/256782776074';
     waBtn.className = 'whatsapp-float';
