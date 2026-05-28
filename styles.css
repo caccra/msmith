@@ -584,7 +584,7 @@ svg {
 .hero-background {
   position: absolute;
   inset: 0;
-  background-image: url('hero-bg.png');
+  background-image: url('hero-bg.webp');
   background-size: cover;
   background-position: center right;
   z-index: 1;
