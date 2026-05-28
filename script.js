@@ -172,25 +172,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Hero Image Slider
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroDots   = document.querySelectorAll('.hero-dot');
+    // 7. Hero Slider (backgrounds + content panels)
+    const heroSlides   = document.querySelectorAll('.hero-slide');
+    const heroContents = document.querySelectorAll('.hero-content-slide');
+    const heroDots     = document.querySelectorAll('.hero-dot');
 
     if (heroSlides.length > 1) {
         let current = 0;
-        const INTERVAL = 5000;
+        const INTERVAL = 6000;
 
         function goTo(index) {
+            // Remove active from current
             heroSlides[current].classList.remove('active');
+            heroContents[current]?.classList.remove('active');
             heroDots[current]?.classList.remove('active');
+            heroDots[current]?.setAttribute('aria-selected', 'false');
+
             current = (index + heroSlides.length) % heroSlides.length;
+
+            // Add active to new
             heroSlides[current].classList.add('active');
+            heroContents[current]?.classList.add('active');
             heroDots[current]?.classList.add('active');
             heroDots[current]?.setAttribute('aria-selected', 'true');
         }
 
         heroDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => { goTo(i); clearInterval(timer); timer = setInterval(() => goTo(current + 1), INTERVAL); });
+            dot.addEventListener('click', () => {
+                goTo(i);
+                clearInterval(timer);
+                timer = setInterval(() => goTo(current + 1), INTERVAL);
+            });
         });
 
         let timer = setInterval(() => goTo(current + 1), INTERVAL);
@@ -199,7 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroSection = document.getElementById('home');
         if (heroSection) {
             heroSection.addEventListener('mouseenter', () => clearInterval(timer));
-            heroSection.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), INTERVAL); });
+            heroSection.addEventListener('mouseleave', () => {
+                timer = setInterval(() => goTo(current + 1), INTERVAL);
+            });
         }
     }
 

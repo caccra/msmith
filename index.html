@@ -356,9 +356,9 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section with image slider -->
+        <!-- Hero Section with image + content slider -->
         <section id="home" class="hero-section">
-            <!-- Slider backgrounds -->
+            <!-- Backgrounds -->
             <div class="hero-slides" aria-hidden="true">
                 <div class="hero-slide active" style="background-image:url('hero-bg.webp')"></div>
                 <div class="hero-slide" style="background-image:url('images/hamzaandhamza-law-8505627.webp')"></div>
@@ -366,8 +366,10 @@
             </div>
             <div class="hero-overlay"></div>
 
-            <div class="container hero-container animate-on-scroll">
-                <div class="hero-content">
+            <div class="container hero-container">
+
+                <!-- Slide 1 content -->
+                <div class="hero-content hero-content-slide active">
                     <span class="hero-eyebrow">Advocacy. Integrity. Results. &mdash; Est. 2013, Kampala</span>
                     <h1 class="hero-title">Uganda&rsquo;s Advocates for <span class="highlight">Business, Property &amp; Justice</span></h1>
                     <p class="hero-subtitle">Legal battles are never just about the law — they are about your business, your property, your family, your future. M-Smith Advocates, one of the best law firms in Uganda, has stood with clients across Kampala and East Africa for over a decade, turning complex legal challenges into clear, decisive outcomes.</p>
@@ -388,16 +390,66 @@
                         <span class="hero-ticker-sep">|</span>
                         <span class="hero-ticker-item">Est. 2013, Kampala</span>
                     </div>
-                    <!-- Slider dots -->
-                    <div class="hero-dots" role="tablist" aria-label="Hero image slides">
-                        <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-                        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-                        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- Slide 2 content -->
+                <div class="hero-content hero-content-slide">
+                    <span class="hero-eyebrow">M-Smith Advocates &mdash; Kampala, Nairobi &amp; Mombasa</span>
+                    <h1 class="hero-title">Trusted Legal Solutions for <span class="highlight">Individuals, Businesses &amp; Institutions</span></h1>
+                    <p class="hero-subtitle">M-Smith Advocates is a modern law firm committed to delivering strategic legal counsel, strong representation, and practical solutions tailored to your needs.</p>
+                    <div class="hero-actions">
+                        <a href="contact" class="btn btn-primary">Book a Consultation</a>
+                        <a href="practice-areas" class="btn btn-outline">Our Practice Areas</a>
                     </div>
-                    <div class="scroll-indicator">
-                        <div class="scroll-indicator-line"></div>
-                        <span>Scroll</span>
+                    <p class="hero-cta-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Or call us now: <a href="tel:+256782776074" class="hero-call-link">+(256) 782 776 074</a>
+                    </p>
+                    <div class="hero-ticker" aria-label="Firm highlights">
+                        <span class="hero-ticker-item">Kampala HQ</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">Nairobi Office</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">Mombasa Office</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">Est. 2013</span>
                     </div>
+                </div>
+
+                <!-- Slide 3 content -->
+                <div class="hero-content hero-content-slide">
+                    <span class="hero-eyebrow">Strategic. Decisive. Results-Driven.</span>
+                    <h1 class="hero-title">Expert <span class="highlight">Legal Representation</span> Across East Africa</h1>
+                    <p class="hero-subtitle">From the High Court of Uganda to cross-border EAC disputes — M-Smith Advocates brings over a decade of courtroom experience and commercial insight to every matter we handle.</p>
+                    <div class="hero-actions">
+                        <a href="contact" class="btn btn-primary">Speak With an Advocate</a>
+                        <a href="team" class="btn btn-outline">Meet the Team</a>
+                    </div>
+                    <p class="hero-cta-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Or call us now: <a href="tel:+256782776074" class="hero-call-link">+(256) 782 776 074</a>
+                    </p>
+                    <div class="hero-ticker" aria-label="Firm highlights">
+                        <span class="hero-ticker-item">High Court Uganda</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">Commercial Court</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">EACJ</span>
+                        <span class="hero-ticker-sep">|</span>
+                        <span class="hero-ticker-item">Arbitration</span>
+                    </div>
+                </div>
+
+                <!-- Dots (shared) -->
+                <div class="hero-dots" role="tablist" aria-label="Hero slides">
+                    <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="scroll-indicator">
+                    <div class="scroll-indicator-line"></div>
+                    <span>Scroll</span>
                 </div>
             </div>
         </section>
