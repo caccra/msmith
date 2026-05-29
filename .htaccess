@@ -7,6 +7,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# Force www (non-www → www) — must come after HTTPS redirect
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect legacy /home/ duplicate to root
+RewriteRule ^home/?$ / [R=301,L]
+
 # Security headers
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
@@ -27,8 +35,98 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
+# Page slug redirects (renamed pages)
+RewriteRule ^mining-minerals/?$ /mining-transaction-advisory [R=301,L]
+
 # 3. Internally rewrite requests without extension to .html files
-# If requesting /about, serve /about.html internally
+# Handles both root pages (/about) and subdirectory pages (/articles/slug)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ================================================
+# GZIP / Deflate Compression
+# ================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Don't compress already-compressed files
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|woff2?|gz|zip|rar)$ no-gzip dont-vary
+
+    Header append Vary Accept-Encoding
+</IfModule>
+
+# Brotli (if available — Bluehost supports it on LiteSpeed)
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+# ================================================
+# Browser Caching (Expires / Cache-Control)
+# ================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML — short cache, check for updates
+    ExpiresByType text/html                    "access plus 0 seconds"
+
+    # CSS and JavaScript — 1 year (versioned via build)
+    ExpiresByType text/css                     "access plus 1 year"
+    ExpiresByType application/javascript       "access plus 1 year"
+    ExpiresByType text/javascript              "access plus 1 year"
+
+    # Images — 1 year
+    ExpiresByType image/webp                   "access plus 1 year"
+    ExpiresByType image/jpeg                   "access plus 1 year"
+    ExpiresByType image/png                    "access plus 1 year"
+    ExpiresByType image/gif                    "access plus 1 year"
+    ExpiresByType image/svg+xml               "access plus 1 year"
+    ExpiresByType image/x-icon               "access plus 1 year"
+
+    # Fonts — 1 year
+    ExpiresByType font/woff                    "access plus 1 year"
+    ExpiresByType font/woff2                   "access plus 1 year"
+    ExpiresByType application/font-woff        "access plus 1 year"
+
+    # Sitemap / feeds — 1 day
+    ExpiresByType application/xml              "access plus 1 day"
+    ExpiresByType text/xml                     "access plus 1 day"
+    ExpiresByType text/plain                   "access plus 1 day"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # CSS, JS, images: immutable 1-year cache
+    <FilesMatch "\.(css|js|webp|jpe?g|png|gif|svg|woff2?)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML: always revalidate
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ================================================
+# Keep-Alive (reduces connection overhead)
+# ================================================
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# ================================================
+# WebP content negotiation (serve .webp to supporting browsers)
+# ================================================
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_URI} \.(jpe?g|png)$
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.webp -f
+    RewriteRule \.(jpe?g|png)$ %{REQUEST_URI}.webp [T=image/webp,L]
+    Header append Vary Accept env=REDIRECT_accept
+</IfModule>

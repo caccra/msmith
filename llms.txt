@@ -23,7 +23,7 @@ The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala,
 
 - Masari Aim Smith — Principal Partner (LLB MUK, Dip. LDC); founder of M-Smith Advocates; specialises in Corporate & Commercial Law, Real Estate & Land Law, Immigration Law, EAC Law
 - Namulindwa Rose — Advocate (LLB MUK, Dip. LDC); specialises in Employment & Labour Law, Litigation & Arbitration, Human Rights Law
-- Makhoka John — Advocate (LLB MUK, Dip. LDC); specialises in Oil, Gas & Petroleum Law, Mining & Minerals Law, Corporate & Commercial Law
+- Makhoka John — Advocate (LLB MUK, Dip. LDC); specialises in Oil, Gas & Petroleum Law, Mining and Mineral Transaction Advisory, Corporate & Commercial Law
 - Nalumansi Sylvia — Legal Assistant (LLB MUK, Dip. LDC); supports Real Estate & Land Law, Intellectual Property Law, Insurance Law
 - Maweu Christopher Kituu — Consultant (MPPM, BASS, Dip. LDC); specialises in EAC Law, cross-border trade advisory, regulatory compliance
 
@@ -36,7 +36,7 @@ The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala,
 - [Employment & Labour Law](https://www.m-smithadvocates.com/employment-labour) — employment contracts, Employment Act 2006 compliance, wrongful termination, Industrial Court Uganda representation, HR compliance audits
 - [Oil, Gas & Petroleum Law](https://www.m-smithadvocates.com/oil-gas-petroleum) — upstream/downstream energy transactions, PEPD licensing, production sharing agreements, national content compliance in Uganda
 - [Intellectual Property Law](https://www.m-smithadvocates.com/intellectual-property) — trademark registration, patent applications, copyright protection, IP enforcement across Uganda and Kenya
-- [Mining & Minerals Law](https://www.m-smithadvocates.com/mining-minerals) — mining licence applications, mineral agreements, community agreements, NEMA environmental compliance, Uganda Mining Act
+- [Mining and Mineral Transaction Advisory](https://www.m-smithadvocates.com/mining-transaction-advisory) — mining licence applications, mineral agreements, community agreements, NEMA environmental compliance, Uganda Mining Act
 - [Insurance Law](https://www.m-smithadvocates.com/insurance) — insurance disputes, claim denials, policy interpretation, insurance litigation in Uganda
 - [Human Rights Law](https://www.m-smithadvocates.com/human-rights) — constitutional petitions under Article 50, civil liberties advocacy, High Court Uganda proceedings
 - [EAC Law](https://www.m-smithadvocates.com/eac-law) — East African Community treaty rights, cross-border trade law, regional arbitration, EACJ proceedings, EAC Common Market Protocol compliance
@@ -46,9 +46,26 @@ The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala,
 
 - [Home](https://www.m-smithadvocates.com/) — firm overview, selected matters, client testimonials, practice area index
 - [About](https://www.m-smithadvocates.com/about) — firm history, mission, professional standards, regulatory compliance, recognition and listings
-- [Practice Areas](https://www.m-smithadvocates.com/practice-areas) — index of all 11 legal service areas
+- [Practice Areas](https://www.m-smithadvocates.com/practice-areas) — index of all 12 legal service areas
 - [Our Team](https://www.m-smithadvocates.com/team) — advocate profiles and qualifications
+- [Fees & Payment Policy](https://www.m-smithadvocates.com/fees) — fee structure, payment methods, billing transparency policy
+- [Articles & Legal Guides](https://www.m-smithadvocates.com/articles) — expert commentary on Uganda law and East African legal practice
 - [Contact](https://www.m-smithadvocates.com/contact) — office locations (Kampala, Nairobi, Mombasa), enquiry form, phone and email
+
+## Articles & Legal Guides
+
+Ten substantive legal guides authored by M-Smith Advocates, covering Uganda law topics most relevant to individuals, businesses, and foreign investors:
+
+- [How to Verify a Land Title in Uganda Before You Buy](https://www.m-smithadvocates.com/articles/how-to-verify-land-title-uganda) — URSB title search process, land tenure types, fraud prevention, caveats and encumbrances
+- [Uganda Work Permit Guide 2026: Class G, Class M and Special Pass Explained](https://www.m-smithadvocates.com/articles/uganda-work-permit-guide-2026) — work permit categories, application requirements, timelines, rejection reasons
+- [Arbitration vs Litigation in Uganda: Which is Right for Your Dispute?](https://www.m-smithadvocates.com/articles/arbitration-vs-litigation-uganda) — cost, timeline, confidentiality, and enforceability comparison; CADER, New York Convention
+- [Company Registration at URSB: Complete Timeline and Cost Guide](https://www.m-smithadvocates.com/articles/company-registration-uganda-ursb) — step-by-step URSB registration, fees, post-incorporation obligations
+- [Mining Transactions in Uganda: Key Legal Considerations for Investors](https://www.m-smithadvocates.com/articles/mining-transactions-legal-guide-uganda) — Mining Act 2003, licence types, due diligence, joint ventures, royalties
+- [EAC Free Movement Rights: What Employers and Employees Need to Know](https://www.m-smithadvocates.com/articles/eac-free-movement-rights-employers) — Common Market Protocol rights, Uganda domestic law gap, employer obligations
+- [Employment Contracts in Uganda: Essential Clauses and Legal Requirements](https://www.m-smithadvocates.com/articles/employment-contracts-uganda-guide) — Employment Act 2006 mandatory terms, probation, termination, non-competes
+- [Bibanja Rights in Uganda: What Occupants and Landowners Must Know](https://www.m-smithadvocates.com/articles/bibanja-rights-uganda-guide) — Mailo land, kibanja occupancy rights, Section 35 compensation, transaction process
+- [Foreign Direct Investment in Uganda: Legal Structures and Regulatory Requirements](https://www.m-smithadvocates.com/articles/foreign-investment-uganda-legal-guide) — UIA registration, minimum capital, investment structures, sector restrictions, incentives
+- [Commercial Debt Recovery in Uganda: Options, Timelines, and What Actually Works](https://www.m-smithadvocates.com/articles/commercial-debt-recovery-uganda) — demand letters, statutory demands, summary judgment, Mareva injunctions, settlement
 
 ## About
 
@@ -58,12 +75,12 @@ The firm has appeared in published proceedings before the High Court of Uganda C
 
 ## Verified Outcomes (Representative Matters)
 
-- Fraudulent title uncovered on a UGX 2.4 billion (Shs 2.4 billion) property transaction in Kampala; full client investment protected.
+- Fraudulent title uncovered on a $650,000 property transaction in Kampala; full client investment protected.
 - Constitutional petition filed before the High Court of Uganda Civil Division (Misc. Cause 277/2018) under Article 50(1) and (4) of the Constitution of Uganda.
 - Full market entry for an East African FMCG company completed in under 60 days; all 7 work permits approved on first attempt.
 - Wrongful termination claim (18 months' salary demand) settled at 20% of original demand at the Industrial Court of Uganda.
 - Trademark infringement stopped across Uganda and Kenya; damages recovered across two jurisdictions.
-- UGX 680 million commercial debt recovered at the Commercial Court of Uganda; settlement reached pre-trial.
+- $184,000 commercial debt recovered at the Commercial Court of Uganda; settlement reached pre-trial.
 
 ## Key Facts
 

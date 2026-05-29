@@ -41,14 +41,14 @@ $body .= "Practice area: " . ($service ?: 'Not specified') . "\n\n";
 $body .= "Message:\n" . wordwrap($message, 72, "\n", false) . "\n\n";
 $body .= "---\nSent via the contact form at m-smithadvocates.com";
 
-$headers  = "From: M-Smith Website <noreply@m-smithadvocates.com>\r\n";
-$headers .= "Reply-To: =?UTF-8?B?" . base64_encode($name) . "?= <" . $email . ">\r\n";
+$headers  = "From: M-Smith Advocates <info@m-smithadvocates.com>\r\n";
+$headers .= "Reply-To: " . $name . " <" . $email . ">\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: 8bit\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$sent = mail($to, $subject, $body, $headers);
+$sent = mail($to, $subject, $body, $headers, '-f info@m-smithadvocates.com');
 
 if ($sent) {
     echo json_encode(['success' => true]);

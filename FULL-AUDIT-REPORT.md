@@ -1,267 +1,325 @@
-# SEO Full Audit Report — M-Smith Advocates
-**URL:** https://www.m-smithadvocates.com
-**Date:** May 2026
-**Business Type:** Local Service — Law Firm (Kampala, Uganda; offices in Nairobi & Mombasa)
-**Pages Audited:** 19 HTML files (all pages on disk)
+# M-Smith Advocates — Full SEO Audit Report
+**Site:** https://www.m-smithadvocates.com  
+**Audit Date:** May 2026  
+**Business Type:** Local Legal Service — Full-Service Law Firm (Uganda + East Africa)  
+**Auditor:** Live crawl + local file analysis
 
 ---
 
-## Overall SEO Health Score: 74 / 100
+## SEO Health Score: 41 / 100
 
-| Category | Weight | Score | Notes |
-|---|---|---|---|
-| Technical SEO | 22% | 70/100 | 3 undeployed pages, missing CSP, 3x H1 on homepage |
-| Content Quality | 23% | 78/100 | Strong practice pages; contact/team pages thin |
-| On-Page SEO | 20% | 68/100 | Title overflow, no analytics, stale "11" count on live |
-| Schema / Structured Data | 10% | 82/100 | Solid per-page schema; missing Person/LocalBusiness |
-| Performance (CWV) | 10% | 72/100 | Async fonts + preloaded hero good; no field data |
-| AI Search Readiness | 10% | 91/100 | Excellent llms.txt, AI bot access, structured facts |
-| Images | 5% | 98/100 | All alt text present, WebP throughout |
+| Category | Score | Weight | Weighted |
+|----------|-------|--------|---------|
+| Technical SEO | 30/100 | 22% | 6.6 |
+| Content Quality | 72/100 | 23% | 16.6 |
+| On-Page SEO | 52/100 | 20% | 10.4 |
+| Schema / Structured Data | 35/100 | 10% | 3.5 |
+| Performance (CWV) | 50/100 | 10% | 5.0 |
+| AI Search Readiness | 70/100 | 10% | 7.0 |
+| Images | 40/100 | 5% | 2.0 |
+| **Total** | | | **41.1** |
 
 ---
 
 ## Executive Summary
 
-M-Smith Advocates has a well-structured site with strong content depth, solid schema implementation, and exceptional AI/GEO readiness. The biggest immediate risk is **three pages that are 404 on the live server** (family-law, nairobi, mombasa) — these are already linked from the homepage, creating broken user journeys today. Beyond that, the site has no analytics tracking, the homepage title exceeds the 60-character SERP limit, and there are three H1 tags on the homepage. AI search readiness is the site's standout strength, ahead of most law firms in the region.
+M-Smith Advocates has a technically competent website with strong content depth, but is suffering from a **near-total indexation failure**. Google has indexed only **2 pages** from the entire site — the homepage and a duplicate `/home/` page. The firm is invisible in search results for every high-value keyword it should own: "real estate lawyers Uganda," "immigration lawyers Kampala," "company registration Uganda," etc. Competitors (MMAKS, Mirembe & Co, INQ Advocates, Angualia Busiku) dominate every relevant SERP.
 
-### Top 5 Critical Issues
-1. family-law, nairobi, and mombasa are 404 on the live site but linked from multiple pages
-2. No Google Analytics or Tag Manager — zero organic traffic visibility
-3. Homepage has 3 H1 tags (only the first is used by Google; the rest dilute signal)
-4. Homepage title is 74 characters — truncated in SERPs (limit ~60)
-5. Live homepage still shows "11 Practice Areas" (corrected locally, not yet deployed)
+The root causes are: (1) a canonicalization/indexation block preventing inner pages from being crawled, (2) the articles section not yet deployed to the live server, (3) a stale sitemap on the live server, and (4) missing Google Search Console verification and submission.
 
-### Top 5 Quick Wins
-1. Deploy pending files (family-law, nairobi, mombasa, updated sitemap, index.html)
-2. Add Google Analytics 4 + verify Google Search Console
-3. Trim homepage title to 60 characters or fewer
-4. Remove duplicate H1s from homepage, keep one
-5. Add Person schema to team.html for each advocate
+Fixing these technical issues is the single highest-leverage action available. The content already exists and is good — it simply is not reaching Google.
 
 ---
 
-## 1. Technical SEO
+## CRITICAL ISSUES (Fix Immediately)
 
-### Crawlability & Indexability
+### C1 — Only 2 Pages Indexed by Google
+**Impact: Catastrophic**
 
-**robots.txt** is excellent. Explicitly allows all major AI crawlers: Google-Extended, GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Applebot-Extended. Disallows /terms, /disclaimer, /claude-seo/. References sitemap.
+`site:m-smithadvocates.com` returns only:
+- `https://m-smithadvocates.com/` (homepage)
+- `https://m-smithadvocates.com/home/` (duplicate)
 
-**Sitemap (live server):** 16 URLs. family-law, nairobi, mombasa are missing — the updated sitemap.xml has not been deployed.
-**Sitemap (local disk):** 19 URLs including all three new pages. lastmod: 2026-05-22 on all entries. No changefreq or priority (acceptable).
-**404 Pages:** family-law, nairobi, and mombasa all return HTTP 404 on the live server despite being linked from index.html, practice-areas.html, and about.html.
+The 12 practice area pages, about, team, contact, 10 articles, and all other pages are **not indexed**. The firm is completely invisible to Google for every commercial search term it should rank for.
 
-### Security Headers
+**Likely causes:**
+- GSC has never been verified — sitemap has never been submitted
+- The www vs non-www version may not be properly consolidated
+- Inner pages may have a crawling or rendering barrier preventing Googlebot from following links
 
-| Header | Status |
-|---|---|
-| HTTPS + HSTS (max-age=31536000; includeSubDomains) | PASS |
-| X-Frame-Options: SAMEORIGIN | PASS |
-| X-Content-Type-Options: nosniff | PASS |
-| Referrer-Policy: strict-origin-when-cross-origin | PASS |
-| Permissions-Policy | PASS |
-| Content-Security-Policy | MISSING |
-
-Server: Apache. No X-Powered-By header exposed. Good.
-
-### Canonical URLs
-All pages carry self-referencing canonical tags. Correct.
-
-### URL Structure
-Clean slugs (/real-estate, /immigration). No query strings, no inconsistent trailing slashes.
-
-### Font Loading
-All main HTML files now use async font preloading with noscript fallback — eliminates render-blocking.
+**Fix:**
+1. Deploy `google5c9821a3eb6009be.html` to the server root
+2. Verify in Google Search Console immediately
+3. Submit the updated sitemap to GSC
+4. Check `.htaccess` for any accidental `Disallow` or redirect loops on inner pages
+5. Use GSC URL Inspection to manually request indexing for the 10 highest-priority pages
 
 ---
 
-## 2. Content Quality (E-E-A-T)
+### C2 — Articles Section Returns 404 on Live Server
+**Impact: High**
 
-### Word Counts by Page
+`https://www.m-smithadvocates.com/articles` returns **HTTP 404**. The 10 article pages created locally have not been deployed to production. 10 substantive long-form guides are completely unavailable to users and search engines.
 
-| Page | Words | Status |
-|---|---|---|
-| index.html | ~3,900 | Good |
-| real-estate.html | ~3,200 | Excellent |
-| immigration.html | ~2,600 | Excellent |
-| family-law.html | ~2,200 | Good (not yet live) |
-| eac-law.html | ~2,200 | Good |
-| corporate-commercial.html | ~2,200 | Good |
-| employment-labour.html | ~2,000 | Good |
-| mining-minerals.html | ~1,800 | Adequate |
-| human-rights.html | ~1,800 | Adequate |
-| intellectual-property.html | ~1,800 | Adequate |
-| litigation-arbitration.html | ~1,700 | Adequate |
-| oil-gas-petroleum.html | ~1,700 | Adequate |
-| insurance.html | ~1,600 | Adequate |
-| about.html | ~1,600 | Adequate |
-| team.html | ~1,100 | Thin — no full bios |
-| nairobi.html | ~1,050 | Thin (not yet live) |
-| practice-areas.html | ~1,100 | Index page, acceptable |
-| mombasa.html | ~891 | Thin (not yet live) |
-| contact.html | ~490 | Very thin |
-
-### E-E-A-T Signals
-
-**Strengths:**
-- Advocate credentials stated (LLB MUK, Dip. LDC, Uganda Law Council enrolment)
-- Verifiable case outcomes: UGX 2.4 billion fraud case, Misc. Cause 277/2018, UGX 680 million debt recovery
-- Regulatory memberships: Uganda Law Council, Uganda Law Society, East African Law Society, Uganda Bar Association
-- Directory listings: FindLegal Africa, Lawzana, ULII, Uganda Law Council Approved Firms Register
-- AML/FIA compliance and Data Protection Act 2019 compliance stated
-- Founded 2013 — 12+ years operational track record
-
-**Gaps:**
-- team.html has advocate names and specialisms but no detailed individual bios (education, notable cases, publications)
-- No client testimonials with schema markup
-- No blog or educational content hub — significant authority-building gap
-- No dedicated case study pages (outcomes buried in homepage text)
+**Fix:** Deploy `articles.html` and the entire `articles/` folder to the production server.
 
 ---
 
-## 3. On-Page SEO
+### C3 — Duplicate `/home/` Page Indexed
+**Impact: High**
 
-### Title Tags
+`https://m-smithadvocates.com/home/` is indexed by Google as a separate page from the homepage. This dilutes crawl budget and sends mixed signals about the canonical homepage.
 
-| Page | Characters | Issue |
-|---|---|---|
-| index.html | 74 | Over limit — truncated in SERPs |
-| insurance.html | 59 | Marginal |
-| All other pages | 37-58 | OK |
-
-**Current homepage title:** "M-Smith Advocates | Corporate, Property & Litigation Lawyers in Uganda"
-**Recommended:** "M-Smith Advocates | Lawyers in Kampala, Uganda" (47 chars)
-
-### Meta Descriptions
-All pages: 143-155 characters. Within the ~155 character safe zone. Location keywords present. OK.
-
-### H1 Tags
-- **index.html: 3 H1 tags.** The three are: "Trusted Legal Solutions for Individuals, Businesses & Institutions" / "Uganda's Advocates for Business, Property & Justice" / "Your Trusted Legal Partner". Google treats the first as the primary heading; the others should be H2.
-- All other pages: exactly 1 H1 each. OK.
-
-### Meta Keywords Tag
-All pages still include `<meta name="keywords">`. This tag has been ignored by Google since 2009 and adds no value. Remove from all pages.
-
-### Analytics & Tracking
-**Zero.** No Google Analytics 4, no Google Tag Manager, no heatmap tool detected on any page. There is no way to measure organic traffic, track form completions, or understand which practice area pages generate enquiries.
-
-### Stale Live Content
-The deployed homepage shows "11 Practice Areas" in three places (hero stats, outcomes strip, CTA link). The corrected index.html (with "12") exists locally and needs to be deployed.
+**Fix:** Add `301 redirect /home/ / ` to `.htaccess`, or add `<meta name="robots" content="noindex">` to that page.
 
 ---
 
-## 4. Schema / Structured Data
+### C4 — Live Sitemap is Stale and Inaccurate
+**Impact: High**
 
-### Architecture
-Every page uses a single JSON-LD `@graph` block. Clean, parseable, no inline schema mixed with HTML.
+The live `sitemap.xml` shows only **19 URLs** from an old version:
+- Missing all 10 article pages
+- Missing `disclaimer`, `privacy-policy`, `terms`, `fees`
+- Shows `/mining-minerals` (wrong) instead of `/mining-transaction-advisory`
+- Has no `changefreq` or `priority` values
+- Does not signal the articles section at all
 
-| Page | Schema Types |
-|---|---|
-| Homepage | LegalService, WebSite, WebPage, FAQPage |
-| About | LegalService, BreadcrumbList |
-| Practice area pages | LegalService, BreadcrumbList, FAQPage, Service, WebPage |
-| Contact | LegalService, ContactPage, BreadcrumbList |
-| Team | LegalService, BreadcrumbList |
+The updated 43-URL sitemap with full metadata exists locally and must be deployed.
 
-### Gaps
-
-**No explicit LocalBusiness node.** Google's local knowledge panel and local pack rely on `LocalBusiness` (or its subtype `LegalService`) with `address`, `geo` (lat/lng), `openingHours`, and optionally `hasMap`. The current `LegalService` schema does not inherit `LocalBusiness` explicitly. Adding this to the homepage and contact page improves local pack eligibility.
-
-**No Person schema on team.html.** Each advocate should have `Person` schema with `name`, `jobTitle`, `alumniOf`, `memberOf` fields. This tells AI engines and Google exactly who the firm's experts are and in what fields.
-
-**No Review / AggregateRating schema.** If the firm has Google reviews, these can surface star ratings directly in SERPs with appropriate markup.
-
-**No SiteLinksSearchBox** on the homepage (minor — only relevant for large branded traffic).
+**Fix:** Deploy the updated `sitemap.xml` and submit it in Google Search Console.
 
 ---
 
-## 5. Performance (Core Web Vitals)
+### C5 — Google Search Console Not Verified
+**Impact: Blocks all GSC capabilities**
 
-*No CrUX field data available (no Google Search Console connected). Lab-based assessment only.*
+Without GSC, there is no way to submit the sitemap, monitor indexation, receive manual action notices, identify crawl errors, or track search performance. The verification file `google5c9821a3eb6009be.html` is ready — it just needs to go live.
 
-### Strengths
-- Hero image uses `<link rel="preload" as="image" fetchpriority="high">` — directly improves LCP
-- WebP images throughout — efficient file sizes
-- Async font loading eliminates render-blocking; noscript fallback present
-- HTTPS with no mixed content detected
-
-### Risk Areas
-- **Google Fonts external dependency.** Even with async loading, the browser must open a connection to fonts.googleapis.com and fonts.gstatic.com on each first visit. Self-hosting the four font families would remove this latency entirely.
-- **No CDN detected.** The site is served from an Apache origin. A CDN (Cloudflare free tier) would reduce TTFB for visitors in Nairobi, Mombasa, and other East African locations outside Kampala.
-- **Below-fold lazy loading.** Could not verify without full rendering, but images not in the initial viewport should carry `loading="lazy"`.
+**Fix:** Deploy the verification file, then verify at search.google.com/search-console.
 
 ---
 
-## 6. AI Search Readiness (GEO)
+## HIGH PRIORITY (Fix Within 1 Week)
 
-**Score: 91/100 — the site's strongest area.**
+### H1 — Internal Links Point to `/mining-minerals` (Old URL)
+The live navigation on multiple pages links to `/mining-minerals` instead of `/mining-transaction-advisory`. The `mining-minerals.html` page has a canonical pointing to `/mining-transaction-advisory`, so link equity is being misrouted.
 
-| Signal | Status |
-|---|---|
-| llms.txt present, well-structured, CC0 licensed | PASS |
-| All major AI bots explicitly allowed in robots.txt | PASS |
-| Factual, citable content with specific figures | PASS |
-| JSON-LD schema on every page | PASS |
-| Server-rendered HTML (no JS-gated content) | PASS |
-| Practice pages directly answer "Who handles X in Uganda?" | PASS |
-| llms.txt referenced in robots.txt | PASS |
-| llms.txt updated to 12 practice areas | PASS |
-
-### Why This Matters
-When someone asks ChatGPT, Perplexity, or Google AI Overviews "best immigration lawyers in Kampala" or "law firm for work permits Uganda", a well-structured llms.txt + schema + citable facts significantly increases the likelihood of being cited. M-Smith is well positioned here.
-
-### Minor Gaps
-- No `llms-full.txt` — a full-text companion file improves AI retrieval for complex multi-topic queries
-- Nairobi and Mombasa offices not yet in llms.txt — add after those pages go live
-- No outbound links to source legislation (Uganda Land Act, Advocates Act, etc.) — external citations add authority signals for AI fact-checking
+**Fix:** Update all nav links to `mining-transaction-advisory`. Add `301 Redirect /mining-minerals /mining-transaction-advisory` in `.htaccess`.
 
 ---
 
-## 7. Local SEO
+### H2 — Meta Descriptions Not Rendering in HTML Source
+Across every page tested — homepage, about, immigration, real-estate, contact, litigation, team — no meta description was detectable in the crawled HTML. This strongly suggests they are JavaScript-injected, making them invisible to Google's basic HTML crawler. Google then writes its own snippet from page content, which is typically worse.
 
-### NAP Consistency
-Consistent across all pages:
-- Kampala: Tirupati Mazima Mall, Kabalagala — +(256) 782 776 074
-- Nairobi: Ruprani House, 3rd Floor, Suite 317 — +254 720 124 592
-- Mombasa: NSSF House, 7th Floor — +254 708 990 273
-
-### Location Pages
-- nairobi.html (~1,047 words) and mombasa.html (~891 words) exist locally but are 404 on the live server
-- nairobi.html meta description is 163 characters — 8 characters over the safe 155-character limit
-
-### Gaps
-- No Google Business Profile link or verification badge on the site
-- No embedded Google Map on contact.html (text link only — "Get Directions")
-- No Review/AggregateRating schema — star ratings in SERPs require this
-- mombasa.html at ~891 words is thin — expand with Mombasa-specific legal context before deploying
-- No Kampala neighborhood landing pages for hyper-local search (Kabalagala, Kololo, Nakasero)
+**Fix:** Confirm meta descriptions are in the server-rendered `<head>` tag. Open page source (`Ctrl+U`) and search for `<meta name="description"` — if absent, the tags are JS-rendered and must be moved to static HTML.
 
 ---
 
-## 8. Images
+### H3 — Canonical Tags Not Rendering in HTML Source
+No `<link rel="canonical">` was detected in the crawled HTML of any page. Without server-rendered canonicals, Google may not know which URL version to prefer, especially given the www/non-www ambiguity.
 
-**100% of images across all 17 pages have descriptive alt text.** WebP format used consistently. OG images reference logo.png (file exists on server). No oversized images detected from local file inspection.
-
-**Opportunity:** Every page shares the same OG image (logo.png). Practice-area-specific OG images would improve social media click-through rates and recognition when links are shared on LinkedIn, WhatsApp, or X.
-
----
-
-## 9. Sitemap
-
-| Item | Status |
-|---|---|
-| Referenced in robots.txt | PASS |
-| Accessible via HTTPS | PASS |
-| Live URL count | 16 (3 new pages missing) |
-| Local URL count | 19 (correct) |
-| lastmod format | Valid (2026-05-22) |
-| changefreq | Not set (acceptable) |
-| Legal/utility pages correctly excluded | PASS |
+**Fix:** Ensure canonical tags are in the static HTML `<head>`, not injected by JavaScript.
 
 ---
 
-## 10. Internal Linking
+### H4 — www vs non-www Canonicalization Not Confirmed
+Google's index shows `m-smithadvocates.com` (non-www) while all local canonical/OG tags reference `www.m-smithadvocates.com`. If both versions resolve without a 301 redirect, Google may treat them as separate sites and split link equity.
 
-- Practice area pages cross-link to each other. Good.
-- Homepage links to all 12 practice areas including family-law — which is currently 404.
-- nairobi.html and mombasa.html not linked from main navigation or footer; reachable only via sitemap.
-- BreadcrumbList schema present on all inner pages but no visible breadcrumb UI — a visual breadcrumb bar would aid navigation and reinforce the schema.
+**Fix:**
+1. Confirm `.htaccess` has: `RewriteRule ^(.*)$ https://www.m-smithadvocates.com/$1 [R=301,L]` for non-www → www
+2. Set preferred domain in Google Search Console
+3. Ensure all canonical and OG URL tags consistently use `www`
+
+---
+
+### H5 — Schema Markup Not Rendering on Live Pages
+The local HTML files contain detailed JSON-LD (LegalService, FAQPage, BreadcrumbList, Article, LocalBusiness, Person). However, live crawls detected no schema on most pages. Schema must be in the static HTML to qualify for rich results.
+
+**Fix:** Deploy updated HTML files. After deployment, test each page with [Google's Rich Results Test](https://search.google.com/test/rich-results).
+
+---
+
+### H6 — robots.txt Disallows `/terms` and `/disclaimer`
+These pages are blocked from all crawlers including Googlebot. While low SEO value, blocking them means they receive no link equity and can't be evaluated by Google.
+
+**Fix:** Remove both from `Disallow`. If de-indexation is wanted without blocking crawling, add `<meta name="robots" content="noindex, follow">` to each page instead.
+
+---
+
+### H7 — No Google Analytics Installed
+No GA4, GTM, or analytics code was detected on any live page. Without analytics there is no way to measure organic traffic, conversion rates, or the impact of any SEO work.
+
+**Fix:** Install Google Analytics 4 via a `<script>` tag in the `<head>` of every page, or via GTM.
+
+---
+
+## MEDIUM PRIORITY (Fix Within 1 Month)
+
+### M1 — Not Appearing in Any Key SERP
+
+| Query | Top Rankers | M-Smith |
+|-------|-------------|---------|
+| Real estate lawyers Uganda | MMAKS, Mirembe, INQ, Angualia Busiku | ❌ Not found |
+| Immigration lawyers Kampala | INQ, Ahamark, Favour Advocates | ❌ Not found |
+| Company registration Uganda lawyer | Directory listings | ❌ Not found |
+| Law firm Kampala Uganda | MMAKS, MBS, CM Advocates | ❌ Not found |
+
+This is primarily a consequence of the indexation failure (C1). Once inner pages are indexed, the firm's content quality gives it a realistic shot at ranking for niche long-tail terms first, then broader terms over time.
+
+**Realistic quick-win ranking targets (low-competition, M-Smith has specific content):**
+- "how to verify land title Uganda"
+- "bibanja rights Uganda"
+- "Class G work permit Uganda 2026"
+- "EAC free movement employers Uganda"
+- "mining transaction advisory Uganda"
+- "arbitration vs litigation Uganda"
+
+---
+
+### M2 — No Person Schema on Team Page
+Individual lawyer profiles have no structured data. Google cannot extract individual advocate credentials for rich results.
+
+**Fix:** Add `Person` schema for each advocate with `name`, `jobTitle`, `worksFor`, `alumniOf`, `knowsAbout`.
+
+---
+
+### M3 — Team Page Content Thin (~950 words)
+All other pages are 1,500–3,200 words. The team page has fewer than 1,000 words total for 5 professionals.
+
+**Fix:** Expand each bio with specific sub-specialisms, notable matters handled, years of PQE, and a personal statement.
+
+---
+
+### M4 — Google Business Profile Not Optimised
+M-Smith is not appearing in Google Maps or the local pack for any Kampala law firm searches.
+
+**Fix:**
+- Verify GBP ownership at business.google.com
+- Add all 12 practice areas as GBP Services
+- Upload office photos (interior, team, reception)
+- Post regularly (weekly legal tips, news, articles)
+- Actively request reviews from satisfied clients
+
+---
+
+### M5 — No Backlink Profile
+The firm has no inbound links from authoritative domains beyond tabloid news (Red Pepper) and directory listings. Domain Authority is effectively 0.
+
+**Fix:**
+- Optimize Lawzana profile to appear in "10 best" lists
+- Submit to HG.org, Martindale, lawyers.com, Africa Legal Network
+- Contribute guest articles to Uganda Law Society publications and EALS
+- Publish press releases for significant matters (with client permission)
+
+---
+
+### M6 — Image Filenames Contain Spaces
+Several images use filenames with spaces: `m-smithadvocates_employement and labour.jpeg`, `m-smithadvocates Litigation.webp`. These require `%20` URL encoding and are poor practice for SEO.
+
+**Fix:** Rename files using hyphens, update all references in HTML. Descriptive names like `employment-labour-law-uganda.jpeg` also improve image search visibility.
+
+---
+
+### M7 — `/mining-minerals.html` Orphan Page
+This page has no inbound internal links, its canonical points to `/mining-transaction-advisory`, and it is a duplicate. It wastes crawl budget.
+
+**Fix:** Delete the file and add `301 Redirect /mining-minerals /mining-transaction-advisory` in `.htaccess`.
+
+---
+
+## LOW PRIORITY (Backlog)
+
+### L1 — No Dedicated OG Images Per Practice Area
+All pages use the logo as the OG image. Dedicated featured images per practice area would significantly improve click-through on social sharing.
+
+### L2 — Related-Card Images Missing Explicit Dimensions
+The 3 related-article card images at the bottom of each article page have no `width`/`height` attributes, which can cause minor CLS.
+
+### L3 — Google Fonts External Dependency
+Loading from fonts.googleapis.com adds a DNS lookup + connection on first visit (~150-200ms). Consider self-hosting fonts for a marginal performance gain.
+
+### L4 — No Structured FAQ for Homepage
+The homepage has a comparative table and testimonials but no FAQ schema. Adding an FAQ with 5-8 questions would create rich result eligibility for the homepage SERP listing.
+
+---
+
+## ROBOTS.TXT ANALYSIS
+
+```
+User-agent: *
+Allow: /
+Disallow: /terms          ← Remove this (blocks indexation)
+Disallow: /disclaimer     ← Remove this (blocks indexation)
+Disallow: /claude-seo/    ← Fine (internal dev tool)
+
+User-agent: Google-Extended   ← Excellent AI bot configuration
+User-agent: GPTBot            ← All correctly allowed
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Applebot-Extended
+
+# llms.txt reference: ✅ Present
+Sitemap: ✅ Present (but pointing to stale file)
+```
+
+The AI bot allowlist is excellent — ahead of most law firm sites globally.
+
+---
+
+## DEPLOYMENT CHECKLIST
+
+These files must be deployed to production to unlock indexation:
+
+- [ ] `google5c9821a3eb6009be.html` → enables GSC verification
+- [ ] `sitemap.xml` → 43-URL updated sitemap with articles + metadata
+- [ ] `llms.txt` → updated with 10 article summaries
+- [ ] `articles.html` → articles index page (currently 404 live)
+- [ ] `articles/` folder → all 10 article pages (currently 404 live)
+- [ ] All updated practice area pages → ensure schema/meta in static HTML
+- [ ] `.htaccess` → www redirect + mining-minerals redirect + /home/ redirect
+
+**Post-deployment actions:**
+- [ ] Verify site in Google Search Console
+- [ ] Submit sitemap in GSC
+- [ ] Request indexing of 10 priority pages via URL Inspection tool
+- [ ] Set preferred domain (www) in GSC settings
+- [ ] Install Google Analytics 4
+- [ ] Test schema with Rich Results Test on 3 pages
+- [ ] Verify and optimise Google Business Profile
+
+---
+
+## AI SEARCH READINESS
+
+| Signal | Status | Notes |
+|--------|--------|-------|
+| `llms.txt` present | ✅ | Well-structured, includes team, matters, practice areas |
+| Articles in `llms.txt` | ✅ | 10 guides summarised (updated locally) |
+| AI bot allowlist in robots.txt | ✅ | GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot all allowed |
+| Factual specificity | ✅ | Case references, act names, court names, dates |
+| Named entity density | ✅ | Uganda Land Act Cap 227, URSB, DCIC, etc. |
+| Passage-level structure | ✅ | Clean H2/H3 hierarchy throughout |
+| External citations | ⚠️ | No authoritative third-party sites link or reference M-Smith |
+| AI Overview eligibility | ⚠️ | Blocked by indexation failure — fix C1 first |
+
+---
+
+## CONTENT QUALITY SUMMARY
+
+| Page | Words | FAQ | Schema | E-E-A-T |
+|------|-------|-----|--------|---------|
+| Homepage | ~4,500 | ❌ | ⚠️ | ✅ |
+| About | ~2,200 | ❌ | ⚠️ | ✅ |
+| Real Estate | ~3,200 | ✅ | ⚠️ | ✅ |
+| Immigration | ~2,500 | ✅ | ⚠️ | ✅ |
+| Corporate | ~2,200 | ✅ | ✅ | ✅ |
+| Litigation | ~1,550 | ✅ | ⚠️ | ✅ |
+| Family Law | ~1,900 | ✅ | ⚠️ | ✅ |
+| Team | ~950 | ❌ | ❌ | ⚠️ |
+| Contact | ~800 | ❌ | ⚠️ | ✅ |
+| Articles (×10) | ~1,600 avg | ❌ | ✅ | ✅ |
+
+---
+
+*Report generated: May 2026. Live data sourced from direct crawl of https://www.m-smithadvocates.com.*

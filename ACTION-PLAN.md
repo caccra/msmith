@@ -1,6 +1,113 @@
-# SEO Action Plan - M-Smith Advocates
-Generated: May 2026 | Health Score: 74/100
-Site: https://www.m-smithadvocates.com
+# M-Smith Advocates — SEO Action Plan
+**Generated:** May 2026 | **Live Audit Score: 41/100** (pre-deployment baseline)  
+**Site:** https://www.m-smithadvocates.com
+
+---
+
+## Phase 1 — Deploy & Verify (This Week, ~2 hours total)
+
+These actions cost nothing except upload time and unlock all future SEO progress. The single biggest lever: getting all pages indexed.
+
+| # | Action | File/Tool | Est. Time |
+|---|--------|-----------|-----------|
+| 1 | Upload `google5c9821a3eb6009be.html` to server root | FTP/cPanel | 5 min |
+| 2 | Upload updated `sitemap.xml` (43 URLs with metadata) | FTP/cPanel | 5 min |
+| 3 | Upload updated `llms.txt` (articles section added) | FTP/cPanel | 5 min |
+| 4 | Upload `articles.html` + entire `articles/` folder | FTP/cPanel | 15 min |
+| 5 | Upload all updated HTML files (schema, meta fixes) | FTP/cPanel | 15 min |
+| 6 | Add `.htaccess` redirects (see below) | cPanel / SSH | 10 min |
+| 7 | Verify site in Google Search Console | search.google.com/search-console | 10 min |
+| 8 | Submit sitemap in GSC (Sitemaps section) | GSC | 5 min |
+| 9 | Request indexing of 10 priority pages via URL Inspection | GSC | 30 min |
+| 10 | Set preferred domain to `www` in GSC Settings | GSC | 5 min |
+
+### Required `.htaccess` additions
+
+```apache
+# 1. Force www (consolidates www and non-www)
+RewriteCond %{HTTP_HOST} ^m-smithadvocates\.com [NC]
+RewriteRule ^(.*)$ https://www.m-smithadvocates.com/$1 [R=301,L]
+
+# 2. Redirect /home/ duplicate to homepage
+Redirect 301 /home/ /
+Redirect 301 /home /
+
+# 3. Redirect old mining URL to correct page
+Redirect 301 /mining-minerals /mining-transaction-advisory
+```
+
+---
+
+## Priority Pages to Request Indexing in GSC (in this order)
+
+1. `https://www.m-smithadvocates.com/real-estate`
+2. `https://www.m-smithadvocates.com/immigration`
+3. `https://www.m-smithadvocates.com/corporate-commercial`
+4. `https://www.m-smithadvocates.com/litigation-arbitration`
+5. `https://www.m-smithadvocates.com/articles`
+6. `https://www.m-smithadvocates.com/articles/how-to-verify-land-title-uganda`
+7. `https://www.m-smithadvocates.com/articles/uganda-work-permit-guide-2026`
+8. `https://www.m-smithadvocates.com/articles/company-registration-uganda-ursb`
+9. `https://www.m-smithadvocates.com/about`
+10. `https://www.m-smithadvocates.com/team`
+
+---
+
+## Phase 2 — Technical Fixes (Week 2, 3–5 hours)
+
+| # | Action | Impact |
+|---|--------|--------|
+| 1 | Install Google Analytics 4 on all pages | Enables traffic measurement |
+| 2 | Verify meta descriptions are in static HTML (Ctrl+U check) | CTR improvement in SERPs |
+| 3 | Verify canonical tags are in static HTML | Prevents duplicate URL confusion |
+| 4 | Remove `/terms` and `/disclaimer` from robots.txt Disallow | Allows full crawl |
+| 5 | Test schema with Google Rich Results Test on 3 pages | FAQ rich result eligibility |
+| 6 | Delete `mining-minerals.html` orphan page | Crawl budget cleanup |
+
+---
+
+## Phase 3 — Local & Directory SEO (Weeks 2–4)
+
+| # | Action | Expected Outcome |
+|---|--------|-----------------|
+| 1 | Claim/verify Google Business Profile | Local pack + Maps visibility |
+| 2 | Add all 12 practice areas as GBP Services | Category signal for local search |
+| 3 | Upload 10+ photos to GBP (office interior, team, reception) | Trust signals |
+| 4 | Optimise Lawzana profile for each practice area individually | "10 Best" list appearances |
+| 5 | Submit firm to HG.org and Martindale-Hubbell | Authority backlinks + NAP citations |
+| 6 | Start requesting Google reviews from satisfied clients | GBP ranking factor |
+
+---
+
+## Phase 4 — Content & E-E-A-T (Month 2)
+
+| # | Action | Impact |
+|---|--------|--------|
+| 1 | Expand team page bios to 300+ words each | E-E-A-T, Person schema opportunities |
+| 2 | Add Person schema to each advocate profile | Rich results for individual lawyers |
+| 3 | Add FAQ schema to homepage | Homepage rich snippet in SERPs |
+| 4 | Publish 2 new articles per month (use existing article template) | Topical authority build |
+| 5 | Rename image files — remove spaces, use descriptive hyphenated names | Image SEO |
+| 6 | Add dedicated OG image per practice area | Social sharing click-through improvement |
+
+---
+
+## Projected Score Trajectory
+
+| Category | Now (Live) | After Phase 1 | After Phase 2–4 |
+|----------|-----------|---------------|-----------------|
+| Technical SEO | 30 | 68 | 78 |
+| Content Quality | 72 | 72 | 82 |
+| On-Page SEO | 52 | 65 | 75 |
+| Schema | 35 | 60 | 78 |
+| Performance | 50 | 52 | 60 |
+| AI Readiness | 70 | 78 | 85 |
+| Images | 40 | 40 | 65 |
+| **Overall** | **41** | **~63** | **~76** |
+
+---
+
+*The biggest single action is Phase 1. Everything else is optimisation on top of a working foundation.*
 
 ---
 

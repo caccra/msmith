@@ -28,12 +28,16 @@
     <meta name="twitter:description" content="Looking for lawyers near you in Kampala? Contact M-Smith Advocates at Kabalagala, Kampala. Call +(256) 782 776 074.">
     <meta name="twitter:image" content="https://www.m-smithadvocates.com/logo.png">
 
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"></noscript>
 
     <!-- Custom CSS -->
+    <link rel="preload" as="image" href="images/M-smith Adovcates Office interior.webp" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
@@ -88,6 +92,14 @@
     }
     </script>
     <link rel="alternate" type="text/plain" href="/llms.txt">
+    <!-- Google Analytics 4 | TODO: Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 
 <body data-theme="light">
@@ -124,7 +136,7 @@
                             <a href="real-estate" class="dropdown-item ">Real Estate &amp; Land</a>
                             <a href="intellectual-property" class="dropdown-item ">Intellectual Property</a>
                             <a href="oil-gas-petroleum" class="dropdown-item ">Oil, Gas &amp; Petroleum</a>
-                            <a href="mining-minerals" class="dropdown-item ">Mining &amp; Minerals</a>
+                            <a href="mining-transaction-advisory" class="dropdown-item ">Mining and Mineral Transaction Advisory</a>
                             <a href="employment-labour" class="dropdown-item ">Employment &amp; Labour</a>
                             <a href="corporate-commercial" class="dropdown-item ">Corporate &amp; Commercial</a>
                             <a href="immigration" class="dropdown-item ">Immigration Law</a>
@@ -136,6 +148,8 @@
                     </div>
                 </li>
                     <li><a href="team" class="nav-link">The Team</a></li>
+                    <li><a href="articles" class="nav-link">Articles</a></li>
+                    <li><a href="fees" class="nav-link">Fees</a></li>
                     <li><a href="contact" class="nav-link active">Contact</a></li>
                 </ul>
 
@@ -145,7 +159,7 @@
 
     <main id="main-content">
         <!-- Page Header -->
-        <section class="page-header section-padding">
+        <section class="page-header section-padding" style="background-image: url('images/M-smith Adovcates Office interior.webp');">
             <div class="container animate-on-scroll">
                 <h1 class="section-title">Find Lawyers Near You in Kampala, M-Smith Advocates</h1>
                 <p class="section-description">Looking for lawyers near you in Kampala or anywhere in Uganda? Our advocates are ready to listen. Whatever you are facing, a dispute, a transaction, or a question, all enquiries are handled with complete discretion.</p>
@@ -209,7 +223,7 @@
                             <h4 style="margin-bottom: var(--space-4);">Kenya Offices</h4>
                             <div style="display: flex; flex-direction: column; gap: var(--space-5);">
                                 <div>
-                                    <p style="font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-base); margin-bottom: 6px; font-family: 'Cinzel', serif;">Nairobi</p>
+                                    <p class="office-label">Nairobi</p>
                                     <p style="color: #cbd5e1; font-size: 0.875rem; line-height: 1.6; margin-bottom: 6px;">Ruprani House, 3rd Floor, Suite 317<br>P.O Box 23044-0604, Nairobi</p>
                                     <a href="tel:+254720124592" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: #cbd5e1; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-base)'" onmouseout="this.style.color='#cbd5e1'">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-base);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -217,7 +231,7 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <p style="font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-base); margin-bottom: 6px; font-family: 'Cinzel', serif;">Mombasa</p>
+                                    <p class="office-label">Mombasa</p>
                                     <p style="color: #cbd5e1; font-size: 0.875rem; line-height: 1.6; margin-bottom: 6px;">NSSF House, 7th Floor<br>P.O Box 84115-80100, Mombasa</p>
                                     <a href="tel:+254708990273" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: #cbd5e1; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-base)'" onmouseout="this.style.color='#cbd5e1'">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-base);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -228,7 +242,7 @@
                         </div>
 
                         <div class="office-hours" style="margin-top: var(--space-6);">
-                            <h4>Office Hours</h4>
+                            <h4 style="color:#fff;">Office Hours</h4>
                             <p style="color: #cbd5e1; font-size: 0.875rem;">Monday to Friday: 8:00 AM to 5:00 PM<br>Saturday &amp; Sunday: Closed</p>
                             <p style="color: #94a3b8; font-size: 0.8rem; margin-top: 6px;">For urgent matters outside office hours, send a message via WhatsApp and we will respond as soon as possible.</p>
                         </div>
@@ -255,7 +269,7 @@
                                 <option value="realestate">Real Estate & Land Transactions</option>
                                 <option value="ip">Intellectual Property</option>
                                 <option value="energy">Oil, Gas & Petroleum Law</option>
-                                <option value="mining">Mining & Mineral Resources</option>
+                                <option value="mining">Mining and Mineral Transaction Advisory</option>
                                 <option value="labour">Employment & Labour</option>
                                 <option value="corporate">Corporate & Commercial</option>
                                 <option value="immigration">Immigration Law</option>
@@ -353,6 +367,7 @@
                     <li><a href="about">About Us</a></li>
                     <li><a href="practice-areas">Expertise</a></li>
                     <li><a href="team">Our Team</a></li>
+                    <li><a href="articles">Articles</a></li>
                     <li><a href="contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -363,6 +378,7 @@
                     <li><a href="privacy-policy">Privacy Policy</a></li>
                     <li><a href="terms">Terms of Service</a></li>
                     <li><a href="disclaimer">Disclaimer</a></li>
+                    <li><a href="fees">Fees &amp; Payment Policy</a></li>
                 </ul>
             </div>
 

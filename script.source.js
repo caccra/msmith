@@ -1,11 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * M-Smith Advocates JavaScript
+ * Handles Theme Toggling, Mobile Navigation, and Scroll Animations
+ */
 
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Current Year for Footer
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
 
+    // 3. Mobile Navigation Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const primaryNav = document.getElementById('primary-navigation');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -17,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
             primaryNav.classList.toggle('is-open');
 
-
+            // Prevent body scrolling when menu is open
             if (!isExpanded) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -25,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-
+        // Close mobile menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -37,15 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Removed Header Scroll Effect based on design preference
 
-
-
+    // 4. Expertise Dropdown (mobile toggle + click-outside)
     const dropdownParent = document.querySelector('.nav-item-dropdown');
     const dropdownToggle = document.querySelector('.dropdown-toggle');
 
     if (dropdownParent && dropdownToggle) {
         dropdownToggle.addEventListener('click', (e) => {
-
+            // On mobile: prevent navigation, toggle dropdown
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 dropdownParent.classList.toggle('is-open');
@@ -54,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-
+        // Close dropdown when clicking outside (desktop)
         document.addEventListener('click', (e) => {
             if (!dropdownParent.contains(e.target)) {
                 dropdownParent.classList.remove('is-open');
@@ -62,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-
+        // Close dropdown on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 dropdownParent.classList.remove('is-open');
@@ -70,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-
+        // Close mobile menu when a dropdown link is clicked
         const dropdownLinks = dropdownParent.querySelectorAll('.dropdown-item, .dropdown-all-link');
         dropdownLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -87,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    // 5. Scroll Animations (Intersection Observer)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const animationElements = document.querySelectorAll('.animate-on-scroll');
 
@@ -103,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animationElements.forEach(el => {
             const rect = el.getBoundingClientRect();
-
+            // Immediately reveal elements already in the viewport — don't wait for async IO callback
             if (rect.top < window.innerHeight && rect.bottom > 0) {
                 el.classList.add('is-visible');
             } else {
@@ -118,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    // 6. Contact Form Submission
     const contactForm = document.getElementById('contact-form-dedicated');
     if (contactForm) {
         const submitBtn = contactForm.querySelector('.submit-btn');
@@ -166,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    // 7. Hero Slider (backgrounds + content panels)
     const heroSlides   = document.querySelectorAll('.hero-slide');
     const heroContents = document.querySelectorAll('.hero-content-slide');
     const heroPrev = document.querySelector('.hero-prev');
@@ -198,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let timer = setInterval(() => goTo(current + 1), INTERVAL);
 
-
+        // Pause on hover
         const heroSection = document.getElementById('home');
         if (heroSection) {
             heroSection.addEventListener('mouseenter', () => clearInterval(timer));
@@ -208,23 +214,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
+    // 8. FAQ Accordion
     document.querySelectorAll('.faq-q').forEach(q => {
         q.addEventListener('click', () => {
             const item = q.closest('.faq-item');
             const isOpen = item.classList.contains('open');
-
+            // Close all others
             document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-
+            // Toggle clicked one
             if (!isOpen) item.classList.add('open');
         });
     });
 
-
+    // Auto-open the first FAQ item on each page
     const firstFaq = document.querySelector('.faq-item');
     if (firstFaq) firstFaq.classList.add('open');
 
-
+    // 9. Floating WhatsApp Button (injected globally)
     const waBtn = document.createElement('a');
     waBtn.href = 'https://wa.me/256782776074';
     waBtn.className = 'whatsapp-float';

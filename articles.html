@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="author" content="M-Smith Advocates">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal insights, guides, and articles from M-Smith Advocates. Expert commentary on Uganda law, East African legal practice, real estate, immigration, corporate law, and more.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://www.m-smithadvocates.com/articles">
+    <title>Legal Articles &amp; Insights | M-Smith Advocates Uganda</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Legal Articles &amp; Insights | M-Smith Advocates Uganda">
+    <meta property="og:description" content="Expert legal commentary on Uganda law, real estate, immigration, corporate transactions, and East African legal practice from M-Smith Advocates.">
+    <meta property="og:url" content="https://www.m-smithadvocates.com/articles">
+    <meta property="og:image" content="https://www.m-smithadvocates.com/logo.png">
+    <meta property="og:site_name" content="M-Smith Advocates">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legal Articles &amp; Insights | M-Smith Advocates Uganda">
+    <meta name="twitter:description" content="Expert legal commentary on Uganda law, real estate, immigration, corporate transactions, and East African legal practice.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LegalService",
+          "@id": "https://www.m-smithadvocates.com/#organization",
+          "name": "M-Smith Advocates",
+          "url": "https://www.m-smithadvocates.com"
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://www.m-smithadvocates.com/articles#webpage",
+          "url": "https://www.m-smithadvocates.com/articles",
+          "name": "Legal Articles and Insights | M-Smith Advocates Uganda",
+          "description": "Legal guides and expert commentary from M-Smith Advocates on Uganda law and East African legal practice.",
+          "isPartOf": {"@id": "https://www.m-smithadvocates.com/#website"},
+          "about": {"@id": "https://www.m-smithadvocates.com/#organization"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.m-smithadvocates.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://www.m-smithadvocates.com/articles"}
+          ]
+        }
+      ]
+    }
+    </script>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"></noscript>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="alternate" type="text/plain" href="/llms.txt">
+    <style>
+        /* Articles page styles */
+        .articles-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: var(--space-8);
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            background: var(--bg-surface);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            font-family: 'Lato', sans-serif;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-base);
+            border-color: var(--accent-base);
+            color: #fff;
+        }
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--space-10);
+            transition: box-shadow var(--transition-normal);
+        }
+        .featured-article:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .featured-article-img {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-article-body {
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .article-category {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-base);
+            margin-bottom: var(--space-3);
+        }
+        .featured-article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            line-height: 1.3;
+            color: var(--text-main);
+            margin-bottom: var(--space-3);
+            letter-spacing: -0.02em;
+        }
+        .featured-article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        .featured-article-title a:hover {
+            color: var(--accent-base);
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-4);
+        }
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .article-excerpt {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.75;
+            margin-bottom: var(--space-5);
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+        }
+        .article-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(204, 34, 0, 0.2);
+        }
+        .article-card-img-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .article-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+        .article-card:hover .article-card-img {
+            transform: scale(1.04);
+        }
+        .article-card-body {
+            padding: var(--space-5);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .article-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            line-height: 1.45;
+            color: var(--text-main);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.01em;
+        }
+        .article-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        .article-card-title a:hover {
+            color: var(--accent-base);
+        }
+        .article-card-excerpt {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: var(--space-4);
+        }
+        .article-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--accent-base);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap var(--transition-normal);
+        }
+        .article-read-more:hover {
+            gap: 10px;
+        }
+        .articles-cta {
+            text-align: center;
+            padding: var(--space-10) 0 0;
+        }
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            .featured-article-img {
+                min-height: 240px;
+            }
+            .featured-article-body {
+                padding: var(--space-6);
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Google Analytics 4 | TODO: Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+
+<body data-theme="light">
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="brand-logo">
+                <img src="logo.webp" alt="M-Smith Advocates Logo" width="1536" height="672">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav id="primary-navigation" class="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="about" class="nav-link">About</a></li>
+                    <li class="nav-item-dropdown">
+                    <a href="practice-areas" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Expertise
+                        <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="practice-areas" class="dropdown-all-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            All Practice Areas
+                        </a>
+                        <div class="dropdown-grid">
+                            <a href="litigation-arbitration" class="dropdown-item">Litigation &amp; Arbitration</a>
+                            <a href="real-estate" class="dropdown-item">Real Estate &amp; Land</a>
+                            <a href="intellectual-property" class="dropdown-item">Intellectual Property</a>
+                            <a href="oil-gas-petroleum" class="dropdown-item">Oil, Gas &amp; Petroleum</a>
+                            <a href="mining-transaction-advisory" class="dropdown-item">Mining and Mineral Transaction Advisory</a>
+                            <a href="employment-labour" class="dropdown-item">Employment &amp; Labour</a>
+                            <a href="corporate-commercial" class="dropdown-item">Corporate &amp; Commercial</a>
+                            <a href="immigration" class="dropdown-item">Immigration Law</a>
+                            <a href="insurance" class="dropdown-item">Insurance Law</a>
+                            <a href="human-rights" class="dropdown-item">Human Rights</a>
+                            <a href="eac-law" class="dropdown-item">EAC Law</a>
+                            <a href="family-law" class="dropdown-item">Family Law</a>
+                        </div>
+                    </div>
+                    </li>
+                    <li><a href="team" class="nav-link">The Team</a></li>
+                    <li><a href="fees" class="nav-link">Fees</a></li>
+                    <li><a href="articles" class="nav-link active">Articles</a></li>
+                    <li><a href="contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header section-padding">
+            <div class="container animate-on-scroll">
+                <span class="section-eyebrow" style="color: rgba(255,255,255,0.75);">Knowledge Hub</span>
+                <h1 class="section-title">Legal Articles &amp; Insights</h1>
+                <p class="section-description">Practical legal commentary and guides on Uganda law, East African legal practice, and the issues that matter most to our clients.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+
+                <!-- Category Filters -->
+                <div class="articles-filters animate-on-scroll" id="article-filters">
+                    <button class="filter-btn active" data-filter="all">All Topics</button>
+                    <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+                    <button class="filter-btn" data-filter="immigration">Immigration</button>
+                    <button class="filter-btn" data-filter="corporate">Corporate</button>
+                    <button class="filter-btn" data-filter="litigation">Litigation</button>
+                    <button class="filter-btn" data-filter="employment">Employment</button>
+                    <button class="filter-btn" data-filter="mining">Mining</button>
+                    <button class="filter-btn" data-filter="eac">EAC Law</button>
+                </div>
+
+                <!-- Featured Article -->
+                <article class="featured-article animate-on-scroll" data-category="real-estate">
+                    <img loading="lazy" src="images/oleksandrpidvalnyi-real-estate-6688945.webp" alt="How to verify a land title in Uganda" class="featured-article-img">
+                    <div class="featured-article-body">
+                        <span class="article-category">Real Estate &amp; Land Law</span>
+                        <h2 class="featured-article-title">
+                            <a href="articles/how-to-verify-land-title-uganda">How to Verify a Land Title in Uganda Before You Buy</a>
+                        </h2>
+                        <div class="article-meta">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                May 2026
+                            </span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                8 min read
+                            </span>
+                            <span>Masari Aim Smith</span>
+                        </div>
+                        <p class="article-excerpt">Land fraud is one of the most costly risks in Ugandan property transactions. A fraudulent or encumbered title can result in the loss of your entire investment. This guide walks through the complete title verification process, from the initial search at the Land Registry to physical verification, checking for caveats and encumbrances, and understanding Uganda's four land tenure systems.</p>
+                        <a href="articles/how-to-verify-land-title-uganda" class="article-read-more">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid" id="articles-grid">
+
+                    <!-- Article 1 -->
+                    <article class="article-card animate-on-scroll" data-category="immigration">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates_Immigration Law.webp" alt="Uganda work permit guide 2026" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Immigration Law</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/uganda-work-permit-guide-2026">Uganda Work Permit Guide 2026: Class G, Class M and Special Pass Explained</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>May 2026</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">A practical overview of Uganda's work permit categories, application requirements, timelines, and common reasons for rejection — with guidance on avoiding costly mistakes.</p>
+                            <a href="articles/uganda-work-permit-guide-2026" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card animate-on-scroll delay-1" data-category="litigation">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/Arbitration-vs-Litigation_blog.webp" alt="Arbitration vs litigation Uganda" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Litigation &amp; Arbitration</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/arbitration-vs-litigation-uganda">Arbitration vs Litigation in Uganda: Which is Right for Your Dispute?</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>April 2026</span>
+                                <span>7 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">Commercial dispute resolution in Uganda involves a choice between court litigation and arbitration. This article compares costs, timelines, confidentiality, and enforceability to help businesses make the right decision.</p>
+                            <a href="articles/arbitration-vs-litigation-uganda" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card animate-on-scroll delay-2" data-category="corporate">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates_commercial and corporate law.webp" alt="Company registration Uganda URSB" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Corporate &amp; Commercial</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/company-registration-uganda-ursb">Company Registration at URSB: Complete Timeline and Cost Guide</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>April 2026</span>
+                                <span>5 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">A step-by-step guide to registering a company in Uganda through the Uganda Registration Services Bureau, covering document requirements, fees, timelines, and post-registration obligations.</p>
+                            <a href="articles/company-registration-uganda-ursb" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="article-card animate-on-scroll" data-category="mining">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates_Mining Law.webp" alt="Mining transactions Uganda legal guide" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Mining &amp; Minerals</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/mining-transactions-legal-guide-uganda">Mining Transactions in Uganda: Key Legal Considerations for Investors</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>March 2026</span>
+                                <span>9 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">Uganda's mineral wealth presents substantial investment opportunities. This guide covers the legal framework for mining licences, due diligence, joint ventures, ESG obligations, and cross-border mineral trade under the Mining Act 2003.</p>
+                            <a href="articles/mining-transactions-legal-guide-uganda" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="article-card animate-on-scroll delay-1" data-category="eac">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/M-smithadvocates-EAC-.webp" alt="EAC free movement rights employers employees" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">EAC Law</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/eac-free-movement-rights-employers">EAC Free Movement Rights: What Employers and Employees Need to Know</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>March 2026</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">The EAC Common Market Protocol grants significant rights to citizens of partner states. This article examines what those rights mean in practice, employer obligations, and how the protocol interacts with Uganda's domestic immigration law.</p>
+                            <a href="articles/eac-free-movement-rights-employers" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="article-card animate-on-scroll delay-2" data-category="employment">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates_employement and labour.webp" alt="Employment contracts Uganda legal requirements" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Employment &amp; Labour</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/employment-contracts-uganda-guide">Employment Contracts in Uganda: Essential Clauses and Legal Requirements</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>February 2026</span>
+                                <span>7 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">What must a valid employment contract include under the Employment Act 2006? This guide covers mandatory terms, probationary periods, termination clauses, non-compete provisions, and common drafting errors that create legal exposure.</p>
+                            <a href="articles/employment-contracts-uganda-guide" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 7 -->
+                    <article class="article-card animate-on-scroll" data-category="real-estate">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/Global-Property-Investments-A-Guide-to-the-Legal-Landscape.webp" alt="Bibanja rights Uganda" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Real Estate &amp; Land Law</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/bibanja-rights-uganda-guide">Bibanja Rights in Uganda: What Occupants and Landowners Must Know</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>February 2026</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">Kibanja occupancy on Mailo land is one of the most misunderstood areas of Ugandan property law. This article explains the rights of kibanja holders, the obligations of Mailo landowners, and how land transactions involving bibanja should be handled to avoid disputes.</p>
+                            <a href="articles/bibanja-rights-uganda-guide" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 8 -->
+                    <article class="article-card animate-on-scroll delay-1" data-category="corporate">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates_contract.webp" alt="Foreign direct investment Uganda legal guide" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Corporate &amp; Commercial</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/foreign-investment-uganda-legal-guide">Foreign Direct Investment in Uganda: Legal Structures and Regulatory Requirements</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>January 2026</span>
+                                <span>8 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">Uganda continues to attract foreign investment across multiple sectors. This guide covers the key legal structures available to foreign investors, UIA incentives, sector-specific restrictions, and the regulatory approvals required before commencing operations.</p>
+                            <a href="articles/foreign-investment-uganda-legal-guide" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 9 -->
+                    <article class="article-card animate-on-scroll delay-2" data-category="litigation">
+                        <div class="article-card-img-wrap">
+                            <img loading="lazy" src="images/m-smithadvocates Litigation.webp" alt="Commercial debt recovery Uganda" class="article-card-img">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-category">Litigation &amp; Arbitration</span>
+                            <h3 class="article-card-title">
+                                <a href="articles/commercial-debt-recovery-uganda">Commercial Debt Recovery in Uganda: Options, Timelines, and What Actually Works</a>
+                            </h3>
+                            <div class="article-meta">
+                                <span>January 2026</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p class="article-card-excerpt">Recovering a commercial debt in Uganda requires choosing the right legal mechanism. This article covers demand letters, statutory demands, Commercial Court proceedings, asset-freezing orders, and negotiated settlement strategies for creditors.</p>
+                            <a href="articles/commercial-debt-recovery-uganda" class="article-read-more">
+                                Read Article
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="articles-cta animate-on-scroll">
+                    <p style="color: var(--text-muted); margin-bottom: var(--space-4); font-size: 0.9375rem;">Have a legal question not covered here? Speak with one of our advocates.</p>
+                    <a href="contact" class="btn btn-primary">Book a Consultation</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="/" class="brand-logo">
+                    <img src="logo.webp" alt="M-Smith Advocates Logo">
+                </a>
+                <p class="footer-tagline" style="margin-bottom: 16px;">Experienced Legal Counsel. Practical Results.</p>
+                <div class="footer-contact-info" style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="tel:+256782776074" class="footer-contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-base); flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+(256) 782 776 074</span>
+                    </a>
+                    <a href="mailto:info@m-smithadvocates.com" class="footer-contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-base); flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>info@m-smithadvocates.com</span>
+                    </a>
+                    <a href="https://wa.me/256782776074" class="footer-contact-link" style="color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color var(--transition-normal);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-base); flex-shrink: 0;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        <span>WhatsApp Us</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="practice-areas">Expertise</a></li>
+                    <li><a href="team">Our Team</a></li>
+                    <li><a href="articles">Articles</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                    <li><a href="terms">Terms of Service</a></li>
+                    <li><a href="disclaimer">Disclaimer</a></li>
+                    <li><a href="fees">Fees &amp; Payment Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-offices-bar">
+            <div class="footer-offices-grid">
+                <a href="contact" class="footer-office-card">
+                    <span class="footer-office-city">Kampala</span>
+                    <span class="footer-office-label">HQ, Uganda</span>
+                    <span class="footer-office-addr">Tirupati Mazima Mall, Kabalagala</span>
+                    <span class="footer-office-phone">+(256) 782 776 074</span>
+                </a>
+                <a href="nairobi" class="footer-office-card">
+                    <span class="footer-office-city">Nairobi</span>
+                    <span class="footer-office-label">Kenya Office</span>
+                    <span class="footer-office-addr">Ruprani House, 3rd Floor, Suite 317</span>
+                    <span class="footer-office-phone">+254 720 124 592</span>
+                </a>
+                <a href="mombasa" class="footer-office-card">
+                    <span class="footer-office-city">Mombasa</span>
+                    <span class="footer-office-label">Kenya Office</span>
+                    <span class="footer-office-addr">NSSF House, 7th Floor</span>
+                    <span class="footer-office-phone">+254 708 990 273</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> M-Smith Advocates. All rights reserved.</p>
+                <p style="margin-top:4px;font-size:0.8rem;opacity:0.6;">Designed by <a href="https://cactech.co.ug" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">cactech.co.ug</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Category filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('#articles-grid .article-card, .featured-article');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                articleCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
