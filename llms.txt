@@ -1,6 +1,6 @@
 # M-Smith Advocates
 
-> M-Smith Advocates is a full-service law firm based in Kampala, Uganda, providing expert legal services across 11 practice areas since 2013. The firm serves individuals, businesses, and multinationals across Uganda and the East African Community. Principal Partner: Masari Aim Smith (LLB MUK, Dip. LDC).
+> M-Smith Advocates is a full-service law firm based in Kampala, Uganda, providing expert legal services across 12 practice areas since 2013. The firm serves individuals, businesses, and multinationals across Uganda and the East African Community. Principal Partner: Masari Aim Smith (LLB MUK, Dip. LDC).
 
 > Last updated: May 2026
 
@@ -40,6 +40,7 @@ The firm operates from its principal office at Tirupati Mazima Mall, Kabalagala,
 - [Insurance Law](https://www.m-smithadvocates.com/insurance) — insurance disputes, claim denials, policy interpretation, insurance litigation in Uganda
 - [Human Rights Law](https://www.m-smithadvocates.com/human-rights) — constitutional petitions under Article 50, civil liberties advocacy, High Court Uganda proceedings
 - [EAC Law](https://www.m-smithadvocates.com/eac-law) — East African Community treaty rights, cross-border trade law, regional arbitration, EACJ proceedings, EAC Common Market Protocol compliance
+- [Family Law](https://www.m-smithadvocates.com/family-law) — divorce petitions, child custody and maintenance applications, matrimonial property division, adoption proceedings, succession matters; handled under the Divorce Act (Cap 249) and the Children Act (Cap 59) of Uganda
 
 ## Key Pages
 

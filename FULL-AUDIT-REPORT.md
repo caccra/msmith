@@ -1,372 +1,267 @@
-# M-Smith Advocates — Full SEO Audit Report
-
-**Site:** https://www.m-smithadvocates.com
-**Audit Date:** May 2026
-**Prepared by:** SEO Audit System
+# SEO Full Audit Report — M-Smith Advocates
+**URL:** https://www.m-smithadvocates.com
+**Date:** May 2026
+**Business Type:** Local Service — Law Firm (Kampala, Uganda; offices in Nairobi & Mombasa)
+**Pages Audited:** 19 HTML files (all pages on disk)
 
 ---
 
-## OVERALL SEO HEALTH SCORE: 70 / 100
+## Overall SEO Health Score: 74 / 100
 
-| Category | Weight | Score | Weighted |
+| Category | Weight | Score | Notes |
 |---|---|---|---|
-| Technical SEO | 22% | 72/100 | 15.8 |
-| Content Quality | 23% | 71/100 | 16.3 |
-| On-Page SEO | 20% | 65/100 | 13.0 |
-| Schema / Structured Data | 10% | 72/100 | 7.2 |
-| Performance / CWV | 10% | 68/100 | 6.8 |
-| AI Search Readiness | 10% | 71/100 | 7.1 |
-| Images | 5% | 78/100 | 3.9 |
-| **TOTAL** | **100%** | | **70.1** |
+| Technical SEO | 22% | 70/100 | 3 undeployed pages, missing CSP, 3x H1 on homepage |
+| Content Quality | 23% | 78/100 | Strong practice pages; contact/team pages thin |
+| On-Page SEO | 20% | 68/100 | Title overflow, no analytics, stale "11" count on live |
+| Schema / Structured Data | 10% | 82/100 | Solid per-page schema; missing Person/LocalBusiness |
+| Performance (CWV) | 10% | 72/100 | Async fonts + preloaded hero good; no field data |
+| AI Search Readiness | 10% | 91/100 | Excellent llms.txt, AI bot access, structured facts |
+| Images | 5% | 98/100 | All alt text present, WebP throughout |
 
 ---
 
-## SECTION 1: EXECUTIVE SUMMARY
+## Executive Summary
 
-**Site overview:** https://www.m-smithadvocates.com — Ugandan law firm, 19 pages, static HTML, Bluehost Apache.
+M-Smith Advocates has a well-structured site with strong content depth, solid schema implementation, and exceptional AI/GEO readiness. The biggest immediate risk is **three pages that are 404 on the live server** (family-law, nairobi, mombasa) — these are already linked from the homepage, creating broken user journeys today. Beyond that, the site has no analytics tracking, the homepage title exceeds the 60-character SERP limit, and there are three H1 tags on the homepage. AI search readiness is the site's standout strength, ahead of most law firms in the region.
 
 ### Top 5 Critical Issues
-
-1. **Kampala address conflict** — website shows Tirupati Mazima Mall, Kabalagala but client brief says Plot 7 Mackinnon Road, Nakasero — this NAP conflict with GBP is actively suppressing local pack rankings.
-2. **Geo coordinates inconsistent** — index.html uses (0.27450, 32.60120) and contact.html uses (0.299999, 32.596541) — two different map pins for the same office.
-3. **13 of 16 title tags exceed 60 characters** — Google is rewriting the majority of titles in SERPs.
-4. **sameAs property completely absent from all LegalService schema blocks** — Google cannot verify entity identity across sources.
-5. **9 of 11 practice area pages are thin content (under 900 words)** for YMYL legal services.
+1. family-law, nairobi, and mombasa are 404 on the live site but linked from multiple pages
+2. No Google Analytics or Tag Manager — zero organic traffic visibility
+3. Homepage has 3 H1 tags (only the first is used by Google; the rest dilute signal)
+4. Homepage title is 74 characters — truncated in SERPs (limit ~60)
+5. Live homepage still shows "11 Practice Areas" (corrected locally, not yet deployed)
 
 ### Top 5 Quick Wins
-
-1. Fix title tags across 13 pages — 30-minute batch edit, immediate SERP impact.
-2. Add sameAs to homepage LegalService schema with GBP URL and LinkedIn.
-3. Unify geo coordinates to one confirmed set across all pages.
-4. Add og:image to 5 pages missing it (/about, /practice-areas, /team, /contact, /real-estate).
-5. Update robots.txt to explicitly allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot.
+1. Deploy pending files (family-law, nairobi, mombasa, updated sitemap, index.html)
+2. Add Google Analytics 4 + verify Google Search Console
+3. Trim homepage title to 60 characters or fewer
+4. Remove duplicate H1s from homepage, keep one
+5. Add Person schema to team.html for each advocate
 
 ---
 
-## SECTION 2: TECHNICAL SEO
+## 1. Technical SEO
 
-**Score: 72/100**
+### Crawlability & Indexability
 
-| Check | Status | Notes |
+**robots.txt** is excellent. Explicitly allows all major AI crawlers: Google-Extended, GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Applebot-Extended. Disallows /terms, /disclaimer, /claude-seo/. References sitemap.
+
+**Sitemap (live server):** 16 URLs. family-law, nairobi, mombasa are missing — the updated sitemap.xml has not been deployed.
+**Sitemap (local disk):** 19 URLs including all three new pages. lastmod: 2026-05-22 on all entries. No changefreq or priority (acceptable).
+**404 Pages:** family-law, nairobi, and mombasa all return HTTP 404 on the live server despite being linked from index.html, practice-areas.html, and about.html.
+
+### Security Headers
+
+| Header | Status |
+|---|---|
+| HTTPS + HSTS (max-age=31536000; includeSubDomains) | PASS |
+| X-Frame-Options: SAMEORIGIN | PASS |
+| X-Content-Type-Options: nosniff | PASS |
+| Referrer-Policy: strict-origin-when-cross-origin | PASS |
+| Permissions-Policy | PASS |
+| Content-Security-Policy | MISSING |
+
+Server: Apache. No X-Powered-By header exposed. Good.
+
+### Canonical URLs
+All pages carry self-referencing canonical tags. Correct.
+
+### URL Structure
+Clean slugs (/real-estate, /immigration). No query strings, no inconsistent trailing slashes.
+
+### Font Loading
+All main HTML files now use async font preloading with noscript fallback — eliminates render-blocking.
+
+---
+
+## 2. Content Quality (E-E-A-T)
+
+### Word Counts by Page
+
+| Page | Words | Status |
 |---|---|---|
-| HTTPS | PASS | All canonical URLs use https:// |
-| robots.txt | PASS with issues | See below |
-| Sitemap | PASS with issues | See below |
-| Canonicals | PASS | All 19 pages have correct self-referencing canonicals |
-| Redirects | PASS | .htaccess handles extensionless URL rewrites and .html redirects |
-| Mobile | PASS | Viewport meta present; responsive CSS with breakpoints at 320px, 375px, 480px, 580px, 768px, 900px, 1024px |
-| Security | PARTIAL | HTTPS confirmed; X-Content-Type-Options present; no CSP header detected |
-| Crawl depth | PASS | All pages at depth 1 from homepage |
-| hreflang | NOT IMPLEMENTED | Not required yet (single English site); needed if Kenya-specific pages are created |
-| lang attribute | PASS | lang="en" on all html elements |
+| index.html | ~3,900 | Good |
+| real-estate.html | ~3,200 | Excellent |
+| immigration.html | ~2,600 | Excellent |
+| family-law.html | ~2,200 | Good (not yet live) |
+| eac-law.html | ~2,200 | Good |
+| corporate-commercial.html | ~2,200 | Good |
+| employment-labour.html | ~2,000 | Good |
+| mining-minerals.html | ~1,800 | Adequate |
+| human-rights.html | ~1,800 | Adequate |
+| intellectual-property.html | ~1,800 | Adequate |
+| litigation-arbitration.html | ~1,700 | Adequate |
+| oil-gas-petroleum.html | ~1,700 | Adequate |
+| insurance.html | ~1,600 | Adequate |
+| about.html | ~1,600 | Adequate |
+| team.html | ~1,100 | Thin — no full bios |
+| nairobi.html | ~1,050 | Thin (not yet live) |
+| practice-areas.html | ~1,100 | Index page, acceptable |
+| mombasa.html | ~891 | Thin (not yet live) |
+| contact.html | ~490 | Very thin |
 
-**robots.txt detail:**
-- Wildcard Allow: / present
-- Google-Extended explicitly allowed
-- GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot NOT explicitly configured — fix needed
-- /privacy-policy, /terms, /disclaimer blocked from all crawlers — should be unblocked for AI crawlers as they contain E-E-A-T trust signals
+### E-E-A-T Signals
 
-**Sitemap detail:**
-- 16 URLs (correctly excludes 3 noindexed pages)
-- lastmod dates are batch-stamped — adopt per-page dates going forward
-- Trailing slash on homepage only — internally consistent
+**Strengths:**
+- Advocate credentials stated (LLB MUK, Dip. LDC, Uganda Law Council enrolment)
+- Verifiable case outcomes: UGX 2.4 billion fraud case, Misc. Cause 277/2018, UGX 680 million debt recovery
+- Regulatory memberships: Uganda Law Council, Uganda Law Society, East African Law Society, Uganda Bar Association
+- Directory listings: FindLegal Africa, Lawzana, ULII, Uganda Law Council Approved Firms Register
+- AML/FIA compliance and Data Protection Act 2019 compliance stated
+- Founded 2013 — 12+ years operational track record
 
----
-
-## SECTION 3: CONTENT QUALITY & E-E-A-T
-
-**Score: 71/100**
-
-### E-E-A-T Breakdown
-
-| Dimension | Score |
-|---|---|
-| Experience | 14/20 |
-| Expertise | 18/25 |
-| Authoritativeness | 17/25 |
-| Trustworthiness | 22/30 |
-| **Total** | **71/100** |
-
-### Thin Content Pages (under 900 words — YMYL risk)
-
-| Page | Word Count |
-|---|---|
-| corporate-commercial | ~520w |
-| litigation-arbitration | ~530w |
-| insurance | ~530w |
-| human-rights | ~540w |
-| eac-law | ~570w |
-| oil-gas-petroleum | ~580w |
-| mining-minerals | ~580w |
-| intellectual-property | ~590w |
-| employment-labour | ~560w |
-
-9 of 11 practice area pages fail the YMYL minimum threshold of 900 words.
-
-### Strong Pages (set the standard)
-
-- real-estate (~1,100w)
-- immigration (~1,050w)
-
-### Key Gaps
-
-- No blog, no case study pages, no publication dates on any page.
-- 6 verified matter outcomes in llms.txt are NOT published on the corresponding practice area pages — the UGX 2.4B real estate fraud case is the only outcome published on the site.
-- No inline "this is not legal advice" notice on practice area pages.
-- Aggregate rating schema uses unverified testimonials not linked to GBP or any third-party review platform.
-- No year of enrollment to Roll of Advocates for any team member — this is the most fixable credential gap.
-
-### AI Citation Readiness: 63/100
-
-- llms.txt is excellent
-- Site lacks dated informational content — the biggest single gap for AI citation
+**Gaps:**
+- team.html has advocate names and specialisms but no detailed individual bios (education, notable cases, publications)
+- No client testimonials with schema markup
+- No blog or educational content hub — significant authority-building gap
+- No dedicated case study pages (outcomes buried in homepage text)
 
 ---
 
-## SECTION 4: ON-PAGE SEO
-
-**Score: 65/100**
+## 3. On-Page SEO
 
 ### Title Tags
 
-**Status: 2 pass, 13 fail, 1 borderline** — Google is rewriting most titles.
-
-Recommended fixed titles:
-
-| Page | Proposed Title | Characters |
+| Page | Characters | Issue |
 |---|---|---|
-| /about | About M-Smith Advocates \| Law Firm in Uganda | 44 |
-| /practice-areas | Legal Services in Uganda \| M-Smith Advocates | 45 |
-| /team | Lawyers in Kampala, Uganda \| M-Smith Advocates | 47 |
-| /contact | Contact M-Smith Advocates \| Lawyers in Kampala | 47 |
-| /litigation-arbitration | Litigation & Arbitration Lawyers Uganda \| M-Smith | 50 |
-| /real-estate | Real Estate Lawyers Uganda \| M-Smith Advocates | 47 |
-| /intellectual-property | Intellectual Property Lawyers Uganda \| M-Smith | 47 |
-| /oil-gas-petroleum | Oil & Gas Lawyers in Uganda \| M-Smith Advocates | 48 |
-| /mining-minerals | Mining & Minerals Lawyers Uganda \| M-Smith | 43 |
-| /employment-labour | Employment & Labour Lawyers Uganda \| M-Smith | 45 |
-| /corporate-commercial | Corporate & Commercial Lawyers Uganda \| M-Smith | 48 |
-| /immigration | Immigration Lawyers Uganda \| M-Smith Advocates | 47 |
-| /human-rights | Human Rights Lawyers in Uganda \| M-Smith | 41 |
-| /eac-law | EAC Law Lawyers Uganda \| M-Smith Advocates | 43 |
+| index.html | 74 | Over limit — truncated in SERPs |
+| insurance.html | 59 | Marginal |
+| All other pages | 37-58 | OK |
+
+**Current homepage title:** "M-Smith Advocates | Corporate, Property & Litigation Lawyers in Uganda"
+**Recommended:** "M-Smith Advocates | Lawyers in Kampala, Uganda" (47 chars)
 
 ### Meta Descriptions
+All pages: 143-155 characters. Within the ~155 character safe zone. Location keywords present. OK.
 
-**Status: 7 pass, 9 fail** — all failures are minor 2–9 character overruns; all descriptions are unique and compelling.
+### H1 Tags
+- **index.html: 3 H1 tags.** The three are: "Trusted Legal Solutions for Individuals, Businesses & Institutions" / "Uganda's Advocates for Business, Property & Justice" / "Your Trusted Legal Partner". Google treats the first as the primary heading; the others should be H2.
+- All other pages: exactly 1 H1 each. OK.
 
-### Headings
+### Meta Keywords Tag
+All pages still include `<meta name="keywords">`. This tag has been ignored by Google since 2009 and adds no value. Remove from all pages.
 
-- About page H1 is "Who We Are" — weak, no keyword; must be fixed.
-- All other H1s are strong.
-- All practice area pages follow a clean H1/H2/H3 hierarchy.
+### Analytics & Tracking
+**Zero.** No Google Analytics 4, no Google Tag Manager, no heatmap tool detected on any page. There is no way to measure organic traffic, track form completions, or understand which practice area pages generate enquiries.
 
-### Internal Links
-
-- Full mesh between practice area pages via sidebar — PASS.
-- About page body text does not link to any practice areas — add 3–4 links.
-
-### Open Graph
-
-- 5 pages missing og:image: /about, /practice-areas, /team, /contact, /real-estate.
-
-### Twitter Cards
-
-- All pages use `summary` instead of `summary_large_image`.
-- twitter:image absent on most pages.
-
-### Image Alt Text
-
-- 95%+ coverage — PASS.
-- One mislabeled filename: insurance image used for oil/gas card.
-
-### URL Structure
-
-- Extensionless, lowercase, hyphenated, top-level — PASS.
+### Stale Live Content
+The deployed homepage shows "11 Practice Areas" in three places (hero stats, outcomes strip, CTA link). The corrected index.html (with "12") exists locally and needs to be deployed.
 
 ---
 
-## SECTION 5: SCHEMA & STRUCTURED DATA
+## 4. Schema / Structured Data
 
-**Score: 72/100**
+### Architecture
+Every page uses a single JSON-LD `@graph` block. Clean, parseable, no inline schema mixed with HTML.
 
-### Critical Issues
-
-1. **Geo coordinates inconsistent:** index.html (0.27450, 32.60120) vs contact.html (0.299999, 32.596541) — same @id, conflicting values.
-2. **real-estate FAQPage missing @id** — add `"https://www.m-smithadvocates.com/real-estate#faq"`.
-3. **ContactPage.isPartOf points to #organization (wrong)** — must point to #website; add `"about": {"@id": "#organization"}`.
-4. **sameAs completely absent from all LegalService blocks** — critical entity disambiguation gap.
-5. **AggregateRating reviewCount is "6" (string) but only 3 Review objects exist** — fix count to 3 and use integers, not strings.
-
-### Warnings
-
-6. ItemList on practice-areas.html uses `"url"` instead of `"item"` in ListItem.
-7. Review objects have no datePublished.
-8. Person entities on team.html missing `"image"` and `"description"`.
-9. Maweu Christopher Kituu hasCredential missing `"recognizedBy"` on MPPM and BASS credentials.
-10. SearchAction urlTemplate may not resolve to a working search — verify or remove potentialAction.
-
-### Enhancements
-
-11. Add WebPage entity to about.html.
-12. Add ProfilePage entity to team.html.
-13. Add memberOf (Uganda Law Society) to each Person entity.
-14. Add speakable schema to FAQ answers and overview paragraphs.
-15. Add legalServiceType property to Service schema on practice pages.
-
-### FAQPage Status
-
-Present on: immigration, real-estate, corporate-commercial, litigation-arbitration.
-Absent from: 7 practice area pages that have FAQ content — add FAQPage JSON-LD to all 11.
-
-> Note: FAQPage will NOT generate Google accordion rich results for commercial sites (Aug 2023 restriction) — retain for AI/LLM citation value only.
-
----
-
-## SECTION 6: PERFORMANCE / CORE WEB VITALS
-
-**Score: 68/100**
-
-### Already Optimized (this session)
-
-- 37 images converted to WebP (avg 90–99% size reduction: 7MB → 54KB for activedia, 3.3MB → 25KB for real estate).
-- loading="lazy" on 27 below-fold images.
-- Google Fonts non-blocking via preload + onload swap.
-- script.js deferred.
-- hero-bg.png preloaded with fetchpriority="high".
-
-### Remaining Issues
-
-| Issue | Priority | Estimated Gain |
-|---|---|---|
-| TTFB likely 300–600ms on Bluehost shared hosting | High | Upgrade to VPS or Cloudflare free tier |
-| No gzip/brotli compression confirmed | High | Add mod_deflate to .htaccess |
-| No browser caching headers confirmed | High | Add Cache-Control to .htaccess for static assets |
-| CSS is 76KB unminified | Medium | Minification saves ~15–20KB |
-| styles.css and script.js have no versioned filenames | Medium | Add ?v= cache busting |
-| No critical CSS inlining | Low | Inline above-fold styles to eliminate render-blocking CSS request |
-
----
-
-## SECTION 7: LOCAL SEO
-
-**Score: 47/100**
-
-### Critical Issues
-
-1. **Kampala address conflict:** website shows Tirupati Mazima Mall, Kabalagala; client brief states Plot 7 Mackinnon Road, Nakasero — must verify and unify across website, GBP, and all citations.
-2. **No /nairobi or /mombasa landing pages** — Kenya offices are invisible to local search.
-3. **No confirmed separate GBP listings** for Nairobi or Mombasa offices.
-4. **sameAs completely missing** — Google cannot verify NAP consistency against external sources.
-
-### High Priority Issues
-
-5. Geo coordinate conflict (see Schema section).
-6. aggregateRating reviewCount discrepancy (see Schema section).
-7. Uganda Law Society + Law Society of Kenya directory listings unconfirmed.
-8. Kenya-specific content: zero pages target Nairobi/Mombasa/Kenya keywords.
-9. No review generation strategy visible; 6 testimonials are unverified (not from GBP).
-
-### GBP Status
-
-| Office | Status |
+| Page | Schema Types |
 |---|---|
-| Kampala | GBP exists — confirmed by embed Place ID 0x177dbc682aec96db:0x1642c7c722d128ac |
-| Nairobi | Unknown — no embed or Place ID found in code |
-| Mombasa | Unknown — no embed or Place ID found in code |
-
-> GBP primary category cannot be confirmed remotely — must be set to "Law Firm" not "Lawyer".
-
----
-
-## SECTION 8: AI SEARCH READINESS / GEO
-
-**Score: 71/100**
-
-### Strengths
-
-- **llms.txt: 74/100** — best-in-class for an East African law firm; factually dense; includes 6 verified case outcomes with court references and UGX figures; all 11 practice areas deep-linked.
-- **Static HTML: 95/100 technical accessibility** — all content in DOM, no JS-rendered text.
-- FAQPage schema on 4 pages with jurisdiction-specific answers.
-- Statute citations throughout (Land Act Cap 227, Employment Act 2006, Advocates Act Cap 267, etc.).
+| Homepage | LegalService, WebSite, WebPage, FAQPage |
+| About | LegalService, BreadcrumbList |
+| Practice area pages | LegalService, BreadcrumbList, FAQPage, Service, WebPage |
+| Contact | LegalService, ContactPage, BreadcrumbList |
+| Team | LegalService, BreadcrumbList |
 
 ### Gaps
 
-- No blog / informational articles — biggest single gap; AI systems cannot cite service pages for how-to queries.
-- No outbound links to authoritative sources (ulii.org, ursb.go.ug, mia.go.ug) — zero outbound citation links on any page.
-- FAQ answers in `<details>`/`<summary>` on real-estate hide content from non-JS parsers.
-- No speakable schema.
-- No RSL 1.0 license declaration in llms.txt.
-- llms.txt missing last-updated date and advocate-to-practice mapping.
-- OAI-SearchBot, ClaudeBot, PerplexityBot not explicitly in robots.txt.
-- External entity corroboration: no Wikipedia, no linked ULII case record, no LinkedIn profiles linked.
+**No explicit LocalBusiness node.** Google's local knowledge panel and local pack rely on `LocalBusiness` (or its subtype `LegalService`) with `address`, `geo` (lat/lng), `openingHours`, and optionally `hasMap`. The current `LegalService` schema does not inherit `LocalBusiness` explicitly. Adding this to the homepage and contact page improves local pack eligibility.
 
-### Platform Scores
+**No Person schema on team.html.** Each advocate should have `Person` schema with `name`, `jobTitle`, `alumniOf`, `memberOf` fields. This tells AI engines and Google exactly who the firm's experts are and in what fields.
 
-| Platform | Score |
+**No Review / AggregateRating schema.** If the firm has Google reviews, these can surface star ratings directly in SERPs with appropriate markup.
+
+**No SiteLinksSearchBox** on the homepage (minor — only relevant for large branded traffic).
+
+---
+
+## 5. Performance (Core Web Vitals)
+
+*No CrUX field data available (no Google Search Console connected). Lab-based assessment only.*
+
+### Strengths
+- Hero image uses `<link rel="preload" as="image" fetchpriority="high">` — directly improves LCP
+- WebP images throughout — efficient file sizes
+- Async font loading eliminates render-blocking; noscript fallback present
+- HTTPS with no mixed content detected
+
+### Risk Areas
+- **Google Fonts external dependency.** Even with async loading, the browser must open a connection to fonts.googleapis.com and fonts.gstatic.com on each first visit. Self-hosting the four font families would remove this latency entirely.
+- **No CDN detected.** The site is served from an Apache origin. A CDN (Cloudflare free tier) would reduce TTFB for visitors in Nairobi, Mombasa, and other East African locations outside Kampala.
+- **Below-fold lazy loading.** Could not verify without full rendering, but images not in the initial viewport should carry `loading="lazy"`.
+
+---
+
+## 6. AI Search Readiness (GEO)
+
+**Score: 91/100 — the site's strongest area.**
+
+| Signal | Status |
 |---|---|
-| Google AI Overviews | 58/100 |
-| ChatGPT Web Search | 44/100 |
-| Perplexity | 52/100 |
-| Bing Copilot | 61/100 |
+| llms.txt present, well-structured, CC0 licensed | PASS |
+| All major AI bots explicitly allowed in robots.txt | PASS |
+| Factual, citable content with specific figures | PASS |
+| JSON-LD schema on every page | PASS |
+| Server-rendered HTML (no JS-gated content) | PASS |
+| Practice pages directly answer "Who handles X in Uganda?" | PASS |
+| llms.txt referenced in robots.txt | PASS |
+| llms.txt updated to 12 practice areas | PASS |
+
+### Why This Matters
+When someone asks ChatGPT, Perplexity, or Google AI Overviews "best immigration lawyers in Kampala" or "law firm for work permits Uganda", a well-structured llms.txt + schema + citable facts significantly increases the likelihood of being cited. M-Smith is well positioned here.
+
+### Minor Gaps
+- No `llms-full.txt` — a full-text companion file improves AI retrieval for complex multi-topic queries
+- Nairobi and Mombasa offices not yet in llms.txt — add after those pages go live
+- No outbound links to source legislation (Uganda Land Act, Advocates Act, etc.) — external citations add authority signals for AI fact-checking
 
 ---
 
-## SECTION 9: BACKLINKS & DOMAIN AUTHORITY
+## 7. Local SEO
 
-- **Estimated referring domains:** <10 (below competitive ranking threshold)
-- **Confirmed citations:** ULII (mentioned, not linked), Lawzana, FindLegal Africa, Uganda Law Council Approved Firms Register
-- **Unconfirmed / missing:** Chambers Africa, Legal 500, IFLR1000, Justia, Avvo, FindLaw
-- **No sameAs** in schema linking to any external directory
-- **Competitor gap:** established Ugandan firms (MMAKS, KAA, AF Mpanga) estimated at 60–150 referring domains
+### NAP Consistency
+Consistent across all pages:
+- Kampala: Tirupati Mazima Mall, Kabalagala — +(256) 782 776 074
+- Nairobi: Ruprani House, 3rd Floor, Suite 317 — +254 720 124 592
+- Mombasa: NSSF House, 7th Floor — +254 708 990 273
 
-### Top 20 Citation Targets (Prioritized)
+### Location Pages
+- nairobi.html (~1,047 words) and mombasa.html (~891 words) exist locally but are 404 on the live server
+- nairobi.html meta description is 163 characters — 8 characters over the safe 155-character limit
 
-| # | Target | Domain Authority | Notes |
-|---|---|---|---|
-| 1 | Google Business Profile — Kampala | — | CRITICAL |
-| 2 | Google Business Profile — Nairobi | — | CRITICAL |
-| 3 | LinkedIn Company Page | DA 98 | |
-| 4 | Uganda Law Society directory | DA ~40 | Most relevant local citation |
-| 5 | Justia international directory | DA 87 | |
-| 6 | FindLaw directory | DA 85 | |
-| 7 | Martindale-Hubbell | DA 82 | |
-| 8 | Avvo — firm + individual attorney profiles | DA 80 | |
-| 9 | Africa Legal | DA ~50 | Regional authority |
-| 10 | LawInfo | DA 72 | |
-| 11 | HG.org | DA 68 | |
-| 12 | Kenya Law Society / LSK directory | DA ~45 | |
-| 13 | Chambers & Partners Africa | Editorial | 12–18 month process |
-| 14 | Legal 500 Sub-Saharan Africa | Editorial | 12–18 month process |
-| 15 | IFLR1000 | Editorial | Strong fit for oil/gas, mining |
-| 16 | Kompass Uganda | DA 65 | B2B directory |
-| 17 | Uganda Yellow Pages | DA ~30 | |
-| 18 | Kenya Yellow Pages | DA ~35 | |
-| 19 | Yelp | DA 94 | Brand signal |
-| 20 | Thomson Reuters Legal Solutions | — | |
-
-### Linkable Asset Ideas
-
-- Uganda Oil & Gas Legal Guide (annual)
-- Uganda Investment Climate FAQ for foreign investors
-- East African Mining Regulations Comparison
-- Uganda Employment Law Compliance Checklist
+### Gaps
+- No Google Business Profile link or verification badge on the site
+- No embedded Google Map on contact.html (text link only — "Get Directions")
+- No Review/AggregateRating schema — star ratings in SERPs require this
+- mombasa.html at ~891 words is thin — expand with Mombasa-specific legal context before deploying
+- No Kampala neighborhood landing pages for hyper-local search (Kabalagala, Kololo, Nakasero)
 
 ---
 
-## SECTION 10: SXO — SEARCH EXPERIENCE OPTIMIZATION
+## 8. Images
 
-**Key finding:** The site's best pages (real-estate, immigration) are aligned with transactional intent — a prospective client finding these pages would understand the services, trust the firm, and be able to contact them. The gap is that 9 practice area pages do not achieve this standard.
+**100% of images across all 17 pages have descriptive alt text.** WebP format used consistently. OG images reference logo.png (file exists on server). No oversized images detected from local file inspection.
 
-### User Intent Gaps
+**Opportunity:** Every page shares the same OG image (logo.png). Practice-area-specific OG images would improve social media click-through rates and recognition when links are shared on LinkedIn, WhatsApp, or X.
 
-- Informational queries ("how to register a company Uganda", "work permit Uganda") have no dedicated pages — users landing on service pages for informational queries will bounce.
-- No fee transparency anywhere on the site — a major friction point for cost-comparison searches.
-- CTAs are strong ("Schedule a Free Consultation") but only appear at the end of pages — add an inline CTA midway through content on each page.
+---
 
-### Persona Scoring (1–10)
+## 9. Sitemap
 
-| Persona | Score | Notes |
-|---|---|---|
-| Corporate client (company registration) | 7/10 | Good schema, but thin content on corporate-commercial page |
-| Expat (work permit) | 9/10 | Immigration page is detailed, process clear, CTAs strong |
-| Individual with land dispute | 8/10 | Real-estate page is the strongest page on the site |
+| Item | Status |
+|---|---|
+| Referenced in robots.txt | PASS |
+| Accessible via HTTPS | PASS |
+| Live URL count | 16 (3 new pages missing) |
+| Local URL count | 19 (correct) |
+| lastmod format | Valid (2026-05-22) |
+| changefreq | Not set (acceptable) |
+| Legal/utility pages correctly excluded | PASS |
+
+---
+
+## 10. Internal Linking
+
+- Practice area pages cross-link to each other. Good.
+- Homepage links to all 12 practice areas including family-law — which is currently 404.
+- nairobi.html and mombasa.html not linked from main navigation or footer; reachable only via sitemap.
+- BreadcrumbList schema present on all inner pages but no visible breadcrumb UI — a visual breadcrumb bar would aid navigation and reinforce the schema.
